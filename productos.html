@@ -217,17 +217,17 @@
       </div>
 
       <h3>Material</h3>
-      <div class="filter-group">
-        <label class="filter-option"><input type="checkbox"> Metal dorado</label>
-        <label class="filter-option"><input type="checkbox"> Cristal</label>
-        <label class="filter-option"><input type="checkbox"> Madera</label>
-        <label class="filter-option"><input type="checkbox"> Metacrilato</label>
+      <div class="filter-group" id="materialFilters">
+        <label class="filter-option"><input type="checkbox" data-material="metal"> Metal dorado</label>
+        <label class="filter-option"><input type="checkbox" data-material="cristal"> Cristal</label>
+        <label class="filter-option"><input type="checkbox" data-material="madera"> Madera</label>
+        <label class="filter-option"><input type="checkbox" data-material="metacrilato"> Metacrilato</label>
       </div>
 
       <h3>Precio</h3>
       <div class="price-range">
-        <div style="display:flex; justify-content:space-between;"><span>0€</span><span>150€+</span></div>
-        <input type="range" min="0" max="150">
+        <div style="display:flex; justify-content:space-between;"><span>0€</span><span id="priceMaxLabel">50€+</span></div>
+        <input type="range" id="priceSlider" min="0" max="50" value="50">
       </div>
     </aside>
 
@@ -243,39 +243,39 @@
       </div>
 
       <div class="prod-grid" id="prodGrid">
-        <a href="producto.html?id=trofeo-copa-dorada" class="prod-card" data-cat="trofeos">
+        <a href="producto.html?id=trofeo-copa-dorada" class="prod-card" data-cat="trofeos" data-material="metal" data-price="18.50">
           <div class="prod-img"><span class="prod-badge">Top ventas</span><span class="prod-fav">♡</span>🏆</div>
           <div class="prod-info"><div class="prod-cat">Trofeos</div><h4>Trofeo Copa Dorada 24cm</h4><div class="prod-bottom"><span class="prod-price">18,50€</span><span class="prod-add">+</span></div></div>
         </a>
-        <a href="producto.html?id=medalla-running" class="prod-card" data-cat="medallas">
+        <a href="producto.html?id=medalla-running" class="prod-card" data-cat="medallas" data-material="metal" data-price="3.90">
           <div class="prod-img"><span class="prod-fav">♡</span>🎖️</div>
           <div class="prod-info"><div class="prod-cat">Medallas</div><h4>Medalla Running Grabada</h4><div class="prod-bottom"><span class="prod-price">3,90€</span><span class="prod-add">+</span></div></div>
         </a>
-        <a href="producto.html?id=placa-cristal" class="prod-card" data-cat="placas">
+        <a href="producto.html?id=placa-cristal" class="prod-card" data-cat="placas" data-material="cristal" data-price="22.00">
           <div class="prod-img"><span class="prod-badge">Nuevo</span><span class="prod-fav">♡</span>🪧</div>
           <div class="prod-info"><div class="prod-cat">Placas</div><h4>Placa Cristal Rectangular</h4><div class="prod-bottom"><span class="prod-price">22,00€</span><span class="prod-add">+</span></div></div>
         </a>
-        <a href="producto.html?id=ajedrez-staunton" class="prod-card" data-cat="ajedrez">
+        <a href="producto.html?id=ajedrez-staunton" class="prod-card" data-cat="ajedrez" data-material="madera" data-price="45.00">
           <div class="prod-img"><span class="prod-fav">♡</span>♟️</div>
           <div class="prod-info"><div class="prod-cat">Ajedrez</div><h4>Set Ajedrez Torneo Staunton</h4><div class="prod-bottom"><span class="prod-price">45,00€</span><span class="prod-add">+</span></div></div>
         </a>
-        <a href="producto.html?id=trofeo-futbol-base" class="prod-card" data-cat="trofeos">
+        <a href="producto.html?id=trofeo-futbol-base" class="prod-card" data-cat="trofeos" data-material="metal" data-price="21.90">
           <div class="prod-img"><span class="prod-fav">♡</span>🏆</div>
           <div class="prod-info"><div class="prod-cat">Trofeos</div><h4>Trofeo Fútbol Base 30cm</h4><div class="prod-bottom"><span class="prod-price">21,90€</span><span class="prod-add">+</span></div></div>
         </a>
-        <a href="producto.html?id=medalla-infantil" class="prod-card" data-cat="medallas">
+        <a href="producto.html?id=medalla-infantil" class="prod-card" data-cat="medallas" data-material="metal" data-price="2.50">
           <div class="prod-img"><span class="prod-fav">♡</span>🎖️</div>
           <div class="prod-info"><div class="prod-cat">Medallas</div><h4>Medalla Infantil Participación</h4><div class="prod-bottom"><span class="prod-price">2,50€</span><span class="prod-add">+</span></div></div>
         </a>
-        <a href="producto.html?id=placa-madera" class="prod-card" data-cat="placas">
+        <a href="producto.html?id=placa-madera" class="prod-card" data-cat="placas" data-material="madera" data-price="16.00">
           <div class="prod-img"><span class="prod-badge">Top ventas</span><span class="prod-fav">♡</span>🪧</div>
           <div class="prod-info"><div class="prod-cat">Placas</div><h4>Placa Madera Grabado Láser</h4><div class="prod-bottom"><span class="prod-price">16,00€</span><span class="prod-add">+</span></div></div>
         </a>
-        <a href="producto.html?id=ajedrez-viaje" class="prod-card" data-cat="ajedrez">
+        <a href="producto.html?id=ajedrez-viaje" class="prod-card" data-cat="ajedrez" data-material="metacrilato" data-price="14.90">
           <div class="prod-img"><span class="prod-fav">♡</span>♟️</div>
           <div class="prod-info"><div class="prod-cat">Ajedrez</div><h4>Tablero Magnético de Viaje</h4><div class="prod-bottom"><span class="prod-price">14,90€</span><span class="prod-add">+</span></div></div>
         </a>
-        <a href="producto.html?id=trofeo-corporativo" class="prod-card" data-cat="trofeos">
+        <a href="producto.html?id=trofeo-corporativo" class="prod-card" data-cat="trofeos" data-material="cristal" data-price="32.00">
           <div class="prod-img"><span class="prod-fav">♡</span>🏆</div>
           <div class="prod-info"><div class="prod-cat">Trofeos</div><h4>Trofeo Corporativo Cristal</h4><div class="prod-bottom"><span class="prod-price">32,00€</span><span class="prod-add">+</span></div></div>
         </a>
@@ -308,37 +308,76 @@
   </footer>
 
 <script>
-  const checkboxes = document.querySelectorAll('#catFilters input[type="checkbox"]');
+  const categoryCheckboxes = document.querySelectorAll('#catFilters input[type="checkbox"]');
+  const materialCheckboxes = document.querySelectorAll('#materialFilters input[type="checkbox"]');
+  const priceSlider = document.getElementById('priceSlider');
+  const priceMaxLabel = document.getElementById('priceMaxLabel');
   const cards = document.querySelectorAll('#prodGrid .prod-card');
   const noResults = document.getElementById('noResults');
   const resultCount = document.querySelector('.result-count');
 
-  function applyFilter(selectedCat) {
-    let visibleCount = 0;
-    cards.forEach(card => {
-      const match = selectedCat === 'todos' || card.dataset.cat === selectedCat;
-      card.style.display = match ? '' : 'none';
-      if (match) visibleCount++;
-    });
-    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-    resultCount.textContent = visibleCount + ' producto' + (visibleCount === 1 ? '' : 's');
+  let selectedCat = 'todos';
 
-    // update checkbox visual state
-    checkboxes.forEach(cb => {
-      const isSelected = cb.dataset.cat === selectedCat;
-      cb.checked = isSelected;
-      cb.closest('.filter-option').classList.toggle('active', isSelected);
-    });
+  function getSelectedMaterials() {
+    return Array.from(materialCheckboxes).filter(cb => cb.checked).map(cb => cb.dataset.material);
   }
 
-  checkboxes.forEach(cb => {
-    cb.addEventListener('change', () => applyFilter(cb.dataset.cat));
+  function applyFilters() {
+    const selectedMaterials = getSelectedMaterials(); // empty array = no material filter applied
+    const maxPrice = parseFloat(priceSlider.value);
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const matchesCat = selectedCat === 'todos' || card.dataset.cat === selectedCat;
+      const matchesMaterial = selectedMaterials.length === 0 || selectedMaterials.includes(card.dataset.material);
+      const matchesPrice = parseFloat(card.dataset.price) <= maxPrice;
+      const visible = matchesCat && matchesMaterial && matchesPrice;
+      card.style.display = visible ? '' : 'none';
+      if (visible) visibleCount++;
+    });
+
+    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    resultCount.textContent = visibleCount + ' producto' + (visibleCount === 1 ? '' : 's');
+  }
+
+  // Category filter (single-select behaviour)
+  categoryCheckboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      selectedCat = cb.dataset.cat;
+      categoryCheckboxes.forEach(other => {
+        const isSelected = other.dataset.cat === selectedCat;
+        other.checked = isSelected;
+        other.closest('.filter-option').classList.toggle('active', isSelected);
+      });
+      applyFilters();
+    });
+  });
+
+  // Material filter (multi-select — check as many as you want)
+  materialCheckboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      cb.closest('.filter-option').classList.toggle('active', cb.checked);
+      applyFilters();
+    });
+  });
+
+  // Price filter (slider)
+  priceSlider.addEventListener('input', () => {
+    const val = parseFloat(priceSlider.value);
+    priceMaxLabel.textContent = val >= 50 ? '50€+' : val + '€';
+    applyFilters();
   });
 
   // read ?cat= from URL (set when coming from homepage links)
   const params = new URLSearchParams(window.location.search);
   const initialCat = params.get('cat') || 'todos';
-  applyFilter(initialCat);
+  selectedCat = initialCat;
+  categoryCheckboxes.forEach(cb => {
+    const isSelected = cb.dataset.cat === initialCat;
+    cb.checked = isSelected;
+    cb.closest('.filter-option').classList.toggle('active', isSelected);
+  });
+  applyFilters();
 </script>
 
 </body>
