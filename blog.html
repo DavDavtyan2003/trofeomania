@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Trofeomanía</title>
+<meta name="description" content="Ideas y guías sobre trofeos, medallas y placas grabadas: cómo elegir el premio ideal para tu evento o competición.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #16302A; --green-mid: #234238; --brass: #C9A15C; --brass-bright: #E0BD7D;
+    --cream: #F3EDE1; --warm-white: #FBF9F5; --ink: #211E19; --maroon: #6B222C;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Work Sans', sans-serif; background: var(--warm-white); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; }
+  a { text-decoration: none; color: inherit; }
+  .mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.04em; }
+
+  .topbar { background: var(--ink); color: var(--cream); text-align: center; font-size: 0.78rem; padding: 8px; letter-spacing: 0.03em; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 5%; background: var(--warm-white); position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--green-deep); }
+  .logo span { color: var(--brass); }
+  .nav-links { display: flex; gap: 32px; font-size: 0.92rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--brass); }
+  .cart-btn { background: var(--green-deep); color: var(--cream); padding: 10px 20px; border-radius: 3px; font-size: 0.85rem; font-weight: 500; }
+
+  .page-header { background: var(--green-deep); padding: 46px 5% 40px; color: var(--warm-white); }
+  .breadcrumb { font-size: 0.82rem; color: rgba(251,249,245,0.55); margin-bottom: 14px; }
+  .breadcrumb a:hover { color: var(--brass); }
+  .page-header h1 { font-size: 2rem; margin-bottom: 6px; }
+  .page-header p { color: rgba(251,249,245,0.65); font-size: 0.95rem; }
+
+  .blog-layout { padding: 60px 5% 90px; }
+
+  .featured-post {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+    background: var(--cream); border-radius: 14px; overflow: hidden;
+    margin-bottom: 60px; align-items: stretch;
+  }
+  .featured-img { background: linear-gradient(135deg, #e7ddc9, var(--cream)); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--brass); }
+  .featured-text { padding: 40px 40px 40px 0; display: flex; flex-direction: column; justify-content: center; }
+  .post-tag { display: inline-block; background: var(--brass); color: var(--ink); font-size: 0.7rem; font-weight: 700; padding: 5px 12px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 14px; width: fit-content; }
+  .featured-text h2 { font-size: 1.6rem; margin-bottom: 12px; line-height: 1.25; }
+  .featured-text p { color: rgba(33,30,25,0.65); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px; }
+  .post-meta { font-size: 0.8rem; color: rgba(33,30,25,0.5); }
+
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .post-card { border: 1px solid rgba(0,0,0,0.07); border-radius: 10px; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .post-card:hover { transform: translateY(-4px); box-shadow: 0 16px 30px rgba(22,48,42,0.08); }
+  .post-img { aspect-ratio: 16/10; background: linear-gradient(135deg, var(--cream), #e7ddc9); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; color: var(--brass); }
+  .post-info { padding: 20px 22px 24px; }
+  .post-info h3 { font-size: 1.05rem; margin-bottom: 10px; line-height: 1.35; }
+  .post-info p { font-size: 0.88rem; color: rgba(33,30,25,0.6); line-height: 1.55; margin-bottom: 14px; }
+
+  footer { background: var(--ink); color: rgba(251,249,245,0.65); padding: 60px 5% 30px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-grid h4 { color: var(--warm-white); font-size: 0.85rem; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; }
+  .footer-logo { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--warm-white); margin-bottom: 12px; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 22px; font-size: 0.78rem; display: flex; justify-content: space-between; }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .featured-post { grid-template-columns: 1fr; }
+    .featured-text { padding: 30px; }
+    .blog-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar mono">ENVÍO GRATIS EN PEDIDOS SUPERIORES A 300€ · FABRICADO EN VALENCIA</div>
+
+  <nav>
+    <div class="logo">Trofeo<span>manía</span></div>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <a href="#" class="cart-btn">Carrito (0)</a>
+  </nav>
+
+  <div class="page-header">
+    <div class="breadcrumb"><a href="index.html">Inicio</a> / Blog</div>
+    <h1>Blog Trofeomanía</h1>
+    <p>Guías e ideas sobre trofeos, medallas y premios personalizados</p>
+  </div>
+
+  <div class="blog-layout">
+    <div class="featured-post">
+      <div class="featured-img">🏆</div>
+      <div class="featured-text">
+        <span class="post-tag">Guía</span>
+        <h2>Cómo elegir el trofeo perfecto para tu competición deportiva</h2>
+        <p>Tamaño, material, grabado y presupuesto: todo lo que debes tener en cuenta antes de encargar los trofeos de tu próximo torneo.</p>
+        <span class="post-meta">12 julio 2026 · 5 min de lectura</span>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      <div class="post-card">
+        <div class="post-img">🎖️</div>
+        <div class="post-info">
+          <h3>Medallas para carreras populares: guía de tallas y materiales</h3>
+          <p>Qué diferencia una medalla de metacrilato de una metálica, y cuál conviene según tu presupuesto.</p>
+          <span class="post-meta">3 julio 2026 · 4 min</span>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-img">🪧</div>
+        <div class="post-info">
+          <h3>Placas conmemorativas para empresas: ideas para reconocer a tu equipo</h3>
+          <p>Ejemplos de textos y formatos de grabado para premios corporativos que sí se guardan.</p>
+          <span class="post-meta">28 junio 2026 · 6 min</span>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-img">♟️</div>
+        <div class="post-info">
+          <h3>Ajedrez de torneo: qué mirar antes de comprar un set Staunton</h3>
+          <p>Peso, tamaño de casillas y reglamento FIDE: la guía básica para clubes y colegios.</p>
+          <span class="post-meta">15 junio 2026 · 5 min</span>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-img">🏆</div>
+        <div class="post-info">
+          <h3>Trofeos para colegios: cómo premiar sin desbordar el presupuesto</h3>
+          <p>Opciones económicas que mantienen la calidad para eventos escolares y ligas infantiles.</p>
+          <span class="post-meta">2 junio 2026 · 4 min</span>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-img">✍️</div>
+        <div class="post-info">
+          <h3>Grabado láser vs grabado manual: diferencias y cuándo elegir cada uno</h3>
+          <p>Precisión, coste y tiempos de entrega comparados para que elijas la técnica adecuada.</p>
+          <span class="post-meta">20 mayo 2026 · 5 min</span>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-img">🎖️</div>
+        <div class="post-info">
+          <h3>Ideas de premios para eventos corporativos y aniversarios de empresa</h3>
+          <p>Placas, trofeos y detalles grabados para celebrar hitos dentro de tu empresa.</p>
+          <span class="post-meta">8 mayo 2026 · 4 min</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Trofeomanía</div>
+        <p style="font-size:0.85rem; line-height:1.6;">Tu tienda especializada en trofeos, ajedrez y premios conmemorativos. Fabricación y grabado en Valencia.</p>
+      </div>
+      <div><h4>Tienda</h4><ul><li><a href="productos.html?cat=trofeos">Trofeos</a></li><li><a href="productos.html?cat=medallas">Medallas</a></li><li><a href="productos.html?cat=placas">Placas</a></li><li><a href="productos.html?cat=ajedrez">Ajedrez</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="sobre-nosotros.html">Sobre nosotros</a></li><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="legal.html">Condiciones de venta</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li>Dr. Zamenhoff, 32 — Valencia</li><li>info@sedesport.es</li><li>962 057 303</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Trofeomanía (Sede Sport)</span>
+      <span>Diseño renovado</span>
+    </div>
+  </footer>
+
+</body>
+</html>

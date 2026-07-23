@@ -1,0 +1,132 @@
+// products.js
+// Central place for all product data. Add new products here as objects.
+// Each product needs a unique "id" — used in the URL like producto.html?id=trofeo-copa-dorada
+
+const PRODUCTS = [
+  {
+    id: "trofeo-copa-dorada",
+    name: "Trofeo Copa Dorada 24cm",
+    category: "trofeos",
+    categoryLabel: "Trofeos",
+    price: "18,50",
+    icon: "🏆",
+    badge: "Top ventas",
+    rating: "4.8",
+    reviews: 126,
+    description: "Trofeo clásico en resina dorada con acabado brillante, base de mármol negro y placa de grabado incluida. Perfecto para ligas deportivas, torneos escolares y reconocimientos corporativos.",
+    material: "Resina dorada con base de mármol",
+    height: "24cm"
+  },
+  {
+    id: "medalla-running",
+    name: "Medalla Running Grabada",
+    category: "medallas",
+    categoryLabel: "Medallas",
+    price: "3,90",
+    icon: "🎖️",
+    badge: "",
+    rating: "4.7",
+    reviews: 89,
+    description: "Medalla metálica con cinta personalizable, ideal para carreras populares, maratones y eventos deportivos de gran participación.",
+    material: "Metal aleado con cinta textil",
+    height: "7cm de diámetro"
+  },
+  {
+    id: "placa-cristal",
+    name: "Placa Cristal Rectangular",
+    category: "placas",
+    categoryLabel: "Placas",
+    price: "22,00",
+    icon: "🪧",
+    badge: "Nuevo",
+    rating: "4.9",
+    reviews: 41,
+    description: "Placa conmemorativa en cristal templado con grabado láser de alta precisión, presentada en caja de regalo.",
+    material: "Cristal templado 10mm",
+    height: "20x15cm"
+  },
+  {
+    id: "ajedrez-staunton",
+    name: "Set Ajedrez Torneo Staunton",
+    category: "ajedrez",
+    categoryLabel: "Ajedrez",
+    price: "45,00",
+    icon: "♟️",
+    badge: "",
+    rating: "4.8",
+    reviews: 57,
+    description: "Set de ajedrez homologado con piezas Staunton de madera lastrada y tablero plegable reglamentario, apto para competición.",
+    material: "Madera de haya lastrada",
+    height: "Rey de 9.5cm"
+  },
+  {
+    id: "trofeo-futbol-base",
+    name: "Trofeo Fútbol Base 30cm",
+    category: "trofeos",
+    categoryLabel: "Trofeos",
+    price: "21,90",
+    icon: "🏆",
+    badge: "",
+    rating: "4.6",
+    reviews: 33,
+    description: "Trofeo temático de fútbol con figura de balón dorado, ideal para ligas locales, campus y torneos escolares.",
+    material: "Resina y metal",
+    height: "30cm"
+  },
+  {
+    id: "medalla-infantil",
+    name: "Medalla Infantil Participación",
+    category: "medallas",
+    categoryLabel: "Medallas",
+    price: "2,50",
+    icon: "🎖️",
+    badge: "",
+    rating: "4.9",
+    reviews: 64,
+    description: "Medalla ligera y colorida pensada para eventos infantiles y escolares, con cinta de colores personalizable.",
+    material: "Metal ligero con cinta textil",
+    height: "6cm de diámetro"
+  },
+  {
+    id: "placa-madera",
+    name: "Placa Madera Grabado Láser",
+    category: "placas",
+    categoryLabel: "Placas",
+    price: "16,00",
+    icon: "🪧",
+    badge: "Top ventas",
+    rating: "4.7",
+    reviews: 78,
+    description: "Placa artesanal en madera maciza con grabado láser, un acabado cálido ideal para reconocimientos internos de empresa.",
+    material: "Madera maciza de haya",
+    height: "18x12cm"
+  },
+  {
+    id: "ajedrez-viaje",
+    name: "Tablero Magnético de Viaje",
+    category: "ajedrez",
+    categoryLabel: "Ajedrez",
+    price: "14,90",
+    icon: "♟️",
+    badge: "",
+    rating: "4.5",
+    reviews: 22,
+    description: "Tablero plegable con piezas magnéticas, perfecto para practicar en cualquier lugar sin perder piezas.",
+    material: "Plástico ABS con imanes",
+    height: "20x20cm plegado"
+  },
+  {
+    id: "trofeo-corporativo",
+    name: "Trofeo Corporativo Cristal",
+    category: "trofeos",
+    categoryLabel: "Trofeos",
+    price: "32,00",
+    icon: "🏆",
+    badge: "",
+    rating: "4.9",
+    reviews: 19,
+    description: "Trofeo elegante en cristal óptico con grabado interior 3D, pensado para premios corporativos y aniversarios de empresa.",
+    material: "Cristal óptico",
+    height: "22cm"
+  }
+];

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trofeo Copa Dorada 24cm | Trofeomanía</title>
+<meta name="description" content="Trofeo Copa Dorada 24cm personalizable con grabado incluido. Ideal para competiciones deportivas y eventos corporativos. Fabricación en Valencia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<script src="products.js"></script>
+<style>
+  :root {
+    --green-deep: #16302A;
+    --green-mid: #234238;
+    --brass: #C9A15C;
+    --brass-bright: #E0BD7D;
+    --cream: #F3EDE1;
+    --warm-white: #FBF9F5;
+    --ink: #211E19;
+    --maroon: #6B222C;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Work Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; }
+  a { text-decoration: none; color: inherit; }
+  .mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.04em; }
+
+  .topbar { background: var(--ink); color: var(--cream); text-align: center; font-size: 0.78rem; padding: 8px; letter-spacing: 0.03em; }
+
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 5%; background: var(--warm-white);
+    position: sticky; top: 0; z-index: 50;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--green-deep); }
+  .logo span { color: var(--brass); }
+  .nav-links { display: flex; gap: 32px; font-size: 0.92rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--brass); }
+  .cart-btn { background: var(--green-deep); color: var(--cream); padding: 10px 20px; border-radius: 3px; font-size: 0.85rem; font-weight: 500; }
+
+  .breadcrumb { padding: 20px 5% 0; font-size: 0.82rem; color: rgba(33,30,25,0.5); }
+  .breadcrumb a:hover { color: var(--brass); }
+
+  /* Product layout */
+  .product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 34px 5% 70px;
+  }
+
+  .gallery-main {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, var(--cream), #e7ddc9);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 6rem; color: var(--brass);
+    margin-bottom: 14px;
+  }
+  .gallery-thumbs { display: flex; gap: 12px; }
+  .thumb {
+    width: 76px; height: 76px;
+    background: var(--cream);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; color: var(--brass);
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+  .thumb.active { border-color: var(--brass); }
+
+  .product-cat { font-size: 0.78rem; color: var(--brass); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; margin-bottom: 10px; }
+  .product-title { font-size: 2rem; margin-bottom: 12px; line-height: 1.15; }
+  .product-rating { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: rgba(33,30,25,0.6); margin-bottom: 20px; }
+  .stars { color: var(--brass); }
+  .product-price { font-family: 'IBM Plex Mono', monospace; font-size: 1.8rem; font-weight: 600; color: var(--green-deep); margin-bottom: 22px; }
+  .product-desc { color: rgba(33,30,25,0.7); line-height: 1.65; margin-bottom: 30px; font-size: 0.96rem; }
+
+  /* Personalization box */
+  .personalize-box {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 26px 24px;
+    margin-bottom: 26px;
+  }
+  .personalize-box h3 { font-size: 1.05rem; margin-bottom: 4px; }
+  .personalize-hint { font-size: 0.82rem; color: rgba(33,30,25,0.55); margin-bottom: 16px; }
+  .engrave-input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid rgba(33,30,25,0.15);
+    border-radius: 6px;
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    background: var(--warm-white);
+    margin-bottom: 8px;
+  }
+  .engrave-input:focus { outline: none; border-color: var(--brass); }
+  .char-count { text-align: right; font-size: 0.75rem; color: rgba(33,30,25,0.45); }
+
+  .qty-row { display: flex; align-items: center; gap: 18px; margin-bottom: 26px; }
+  .qty-control { display: flex; align-items: center; border: 1.5px solid rgba(33,30,25,0.15); border-radius: 6px; overflow: hidden; }
+  .qty-btn { width: 38px; height: 42px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; background: var(--warm-white); }
+  .qty-btn:hover { background: var(--cream); }
+  .qty-val { width: 44px; text-align: center; font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
+  .stock-note { font-size: 0.85rem; color: #3a7a4a; font-weight: 500; }
+
+  .buy-row { display: flex; gap: 14px; margin-bottom: 30px; }
+  .btn-primary {
+    background: var(--brass); color: var(--ink);
+    padding: 16px 30px; border-radius: 3px;
+    font-weight: 600; font-size: 0.95rem;
+    flex: 1; text-align: center;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--brass-bright); }
+  .btn-secondary {
+    border: 1.5px solid var(--green-deep); color: var(--green-deep);
+    padding: 16px 24px; border-radius: 3px;
+    font-weight: 600; font-size: 0.95rem;
+  }
+
+  .product-meta { display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: rgba(33,30,25,0.6); padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.08); }
+  .product-meta strong { color: var(--ink); }
+
+  /* Related */
+  section.related { padding: 0 5% 90px; }
+  .section-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; }
+  .section-head h2 { font-size: 1.6rem; }
+  .prod-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .prod-card { background: var(--warm-white); border: 1px solid rgba(0,0,0,0.07); border-radius: 6px; overflow: hidden; }
+  .prod-img { aspect-ratio: 1; background: linear-gradient(135deg, var(--cream), #e7ddc9); display: flex; align-items: center; justify-content: center; font-size: 2.3rem; }
+  .prod-info { padding: 16px 18px 20px; }
+  .prod-info h4 { font-size: 0.95rem; font-weight: 500; margin-bottom: 6px; }
+  .prod-price { font-family: 'IBM Plex Mono', monospace; color: var(--green-deep); font-weight: 500; }
+
+  footer { background: var(--ink); color: rgba(251,249,245,0.65); padding: 60px 5% 30px; margin-top: 20px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-grid h4 { color: var(--warm-white); font-size: 0.85rem; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; }
+  .footer-logo { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--warm-white); margin-bottom: 12px; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 22px; font-size: 0.78rem; display: flex; justify-content: space-between; }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .product-layout { grid-template-columns: 1fr; gap: 34px; }
+    .prod-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar mono">ENVÍO GRATIS EN PEDIDOS SUPERIORES A 300€ · FABRICADO EN VALENCIA</div>
+
+  <nav>
+    <div class="logo">Trofeo<span>manía</span></div>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <a href="#" class="cart-btn">Carrito (0)</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="index.html">Inicio</a> / <a href="productos.html" id="breadcrumbCat">Productos</a> / <span id="breadcrumbName">Producto</span>
+  </div>
+
+  <div class="product-layout">
+    <div class="gallery">
+      <div class="gallery-main" id="galleryMain">🏆</div>
+      <div class="gallery-thumbs">
+        <div class="thumb active" id="thumbIcon1">🏆</div>
+        <div class="thumb" id="thumbIcon2">🏆</div>
+        <div class="thumb" id="thumbIcon3">🏆</div>
+      </div>
+    </div>
+
+    <div class="product-details">
+      <div class="product-cat" id="productCat">Trofeos</div>
+      <h1 class="product-title" id="productTitle">Cargando producto…</h1>
+      <div class="product-rating"><span class="stars" id="productStars">★★★★★</span> <span id="productRating">4.8</span> (<span id="productReviews">126</span> valoraciones)</div>
+      <div class="product-price" id="productPrice">0,00€</div>
+      <p class="product-desc" id="productDesc">—</p>
+
+      <div class="personalize-box">
+        <h3>Personaliza tu grabado</h3>
+        <div class="personalize-hint">Este texto se grabará en la placa dorada del trofeo</div>
+        <input type="text" class="engrave-input" maxlength="30" placeholder="Ej: Campeones Liga 2026" id="engraveInput">
+        <div class="char-count"><span id="charCount">0</span>/30</div>
+      </div>
+
+      <div class="qty-row">
+        <div class="qty-control">
+          <span class="qty-btn" id="qtyMinus">−</span>
+          <span class="qty-val" id="qtyVal">1</span>
+          <span class="qty-btn" id="qtyPlus">+</span>
+        </div>
+        <span class="stock-note">✓ En stock — envío en 5–10 días</span>
+      </div>
+
+      <div class="buy-row">
+        <a href="#" class="btn-primary">Añadir al carrito</a>
+        <a href="#" class="btn-secondary">♡</a>
+      </div>
+
+      <div class="product-meta">
+        <div><strong>Material:</strong> <span id="metaMaterial">—</span></div>
+        <div><strong>Altura:</strong> <span id="metaHeight">—</span></div>
+        <div><strong>Grabado:</strong> Incluido, hasta 30 caracteres</div>
+        <div><strong>Entrega:</strong> 5–10 días laborables (fabricación bajo pedido)</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="related">
+    <div class="section-head"><h2>También te puede interesar</h2></div>
+    <div class="prod-grid">
+      <div class="prod-card"><div class="prod-img">🏆</div><div class="prod-info"><h4>Trofeo Fútbol Base 30cm</h4><div class="prod-price">21,90€</div></div></div>
+      <div class="prod-card"><div class="prod-img">🏆</div><div class="prod-info"><h4>Trofeo Corporativo Cristal</h4><div class="prod-price">32,00€</div></div></div>
+      <div class="prod-card"><div class="prod-img">🎖️</div><div class="prod-info"><h4>Medalla Running Grabada</h4><div class="prod-price">3,90€</div></div></div>
+      <div class="prod-card"><div class="prod-img">🪧</div><div class="prod-info"><h4>Placa Madera Grabado Láser</h4><div class="prod-price">16,00€</div></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Trofeomanía</div>
+        <p style="font-size:0.85rem; line-height:1.6;">Tu tienda especializada en trofeos, ajedrez y premios conmemorativos. Fabricación y grabado en Valencia.</p>
+      </div>
+      <div><h4>Tienda</h4><ul><li><a href="productos.html?cat=trofeos">Trofeos</a></li><li><a href="productos.html?cat=medallas">Medallas</a></li><li><a href="productos.html?cat=placas">Placas</a></li><li><a href="productos.html?cat=ajedrez">Ajedrez</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="sobre-nosotros.html">Sobre nosotros</a></li><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="legal.html">Condiciones de venta</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li>Dr. Zamenhoff, 32 — Valencia</li><li>info@sedesport.es</li><li>962 057 303</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Trofeomanía (Sede Sport)</span>
+      <span>Diseño renovado</span>
+    </div>
+  </footer>
+
+<script>
+  // 1. Read the product id from the URL, e.g. producto.html?id=medalla-running
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get('id');
+
+  // 2. Find that product in our data list (products.js)
+  const product = PRODUCTS.find(p => p.id === productId) || PRODUCTS[0]; // fallback to first product if none found
+
+  // 3. Fill in the page with this product's info
+  document.title = product.name + " | Trofeomanía";
+  document.getElementById('productTitle').textContent = product.name;
+  document.getElementById('productCat').textContent = product.categoryLabel;
+  document.getElementById('productPrice').textContent = product.price + '€';
+  document.getElementById('productDesc').textContent = product.description;
+  document.getElementById('productRating').textContent = product.rating;
+  document.getElementById('productReviews').textContent = product.reviews;
+  document.getElementById('metaMaterial').textContent = product.material;
+  document.getElementById('metaHeight').textContent = product.height;
+  document.getElementById('galleryMain').textContent = product.icon;
+  document.getElementById('thumbIcon1').textContent = product.icon;
+  document.getElementById('thumbIcon2').textContent = product.icon;
+  document.getElementById('thumbIcon3').textContent = product.icon;
+  document.getElementById('breadcrumbName').textContent = product.name;
+  document.getElementById('breadcrumbCat').textContent = product.categoryLabel;
+  document.getElementById('breadcrumbCat').href = 'productos.html?cat=' + product.category;
+
+  // character counter
+  const input = document.getElementById('engraveInput');
+  const count = document.getElementById('charCount');
+  input.addEventListener('input', () => { count.textContent = input.value.length; });
+
+  // quantity control
+  let qty = 1;
+  const qtyVal = document.getElementById('qtyVal');
+  document.getElementById('qtyPlus').addEventListener('click', () => { qty++; qtyVal.textContent = qty; });
+  document.getElementById('qtyMinus').addEventListener('click', () => { if (qty > 1) { qty--; qtyVal.textContent = qty; } });
+
+  // thumbnail switch (visual only for now)
+  document.querySelectorAll('.thumb').forEach(t => {
+    t.addEventListener('click', () => {
+      document.querySelectorAll('.thumb').forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
