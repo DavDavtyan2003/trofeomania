@@ -1,512 +1,780 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trofeomanía | Trofeos, Medallas y Placas Personalizadas en Valencia</title>
-<meta name="description" content="Trofeos, medallas, placas grabadas y ajedrez de competición. Personalización incluida. Envío gratis desde 300€. Fabricación en Valencia.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --green-deep: #16302A;
-    --green-mid: #234238;
-    --brass: #C9A15C;
-    --brass-bright: #E0BD7D;
-    --cream: #F3EDE1;
-    --warm-white: #FBF9F5;
-    --ink: #211E19;
-    --maroon: #6B222C;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Work Sans', sans-serif;
-    background: var(--warm-white);
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-  }
-  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; }
-  a { text-decoration: none; color: inherit; }
-  img { max-width: 100%; display: block; }
-  .mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.04em; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Trofeomanía | Trofeos, Medallas y Placas Personalizadas en Valencia
+    </title>
+    <meta
+      name="description"
+      content="Trofeos, medallas, placas grabadas y ajedrez de competición. Personalización incluida. Envío gratis desde 300€. Fabricación en Valencia."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green-deep: #16302a;
+        --green-mid: #234238;
+        --brass: #c9a15c;
+        --brass-bright: #e0bd7d;
+        --cream: #f3ede1;
+        --warm-white: #fbf9f5;
+        --ink: #211e19;
+        --maroon: #6b222c;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Work Sans", sans-serif;
+        background: var(--warm-white);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .mono {
+        font-family: "IBM Plex Mono", monospace;
+        letter-spacing: 0.04em;
+      }
 
-  /* ===== Top strip ===== */
-  .topbar {
-    background: var(--ink);
-    color: var(--cream);
-    text-align: center;
-    font-size: 0.78rem;
-    padding: 8px;
-    letter-spacing: 0.03em;
-  }
+      /* ===== Top strip ===== */
+      .topbar {
+        background: var(--ink);
+        color: var(--cream);
+        text-align: center;
+        font-size: 0.78rem;
+        padding: 8px;
+        letter-spacing: 0.03em;
+      }
 
-  /* ===== Nav ===== */
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 5%;
-    background: var(--warm-white);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-  .logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--green-deep); }
-  .logo span { color: var(--brass); }
-  .nav-links { display: flex; gap: 32px; font-size: 0.92rem; font-weight: 500; }
-  .nav-links a:hover { color: var(--brass); }
-  .nav-cta { display: flex; align-items: center; gap: 18px; }
-  .cart-btn {
-    background: var(--green-deep);
-    color: var(--cream);
-    padding: 10px 20px;
-    border-radius: 3px;
-    font-size: 0.85rem;
-    font-weight: 500;
-  }
+      /* ===== Nav ===== */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 5%;
+        background: var(--warm-white);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      .logo {
+        font-family: "Fraunces", serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--green-deep);
+      }
+      .logo span {
+        color: var(--brass);
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        font-size: 0.92rem;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: var(--brass);
+      }
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .cart-btn {
+        background: var(--green-deep);
+        color: var(--cream);
+        padding: 10px 20px;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
 
-  /* ===== Hero: Engraving plate ===== */
-  .hero {
-    background: var(--green-deep);
-    background-image: radial-gradient(ellipse at 30% 20%, rgba(201,161,92,0.08), transparent 60%);
-    padding: 90px 5% 100px;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 60px;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0px, transparent 1px, transparent 3px);
-  }
-  .hero-eyebrow {
-    color: var(--brass);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 18px;
-    font-weight: 500;
-  }
-  .hero h1 {
-    color: var(--warm-white);
-    font-size: clamp(2.2rem, 4vw, 3.4rem);
-    line-height: 1.1;
-    margin-bottom: 22px;
-  }
-  .hero p {
-    color: rgba(251,249,245,0.72);
-    font-size: 1.05rem;
-    max-width: 480px;
-    margin-bottom: 34px;
-    line-height: 1.6;
-  }
-  .hero-btns { display: flex; gap: 16px; }
-  .btn-primary {
-    background: var(--brass);
-    color: var(--ink);
-    padding: 15px 30px;
-    border-radius: 3px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: background 0.2s;
-  }
-  .btn-primary:hover { background: var(--brass-bright); }
-  .btn-secondary {
-    border: 1px solid rgba(251,249,245,0.35);
-    color: var(--warm-white);
-    padding: 15px 30px;
-    border-radius: 3px;
-    font-weight: 500;
-    font-size: 0.95rem;
-  }
+      /* ===== Hero: Engraving plate ===== */
+      .hero {
+        background: var(--green-deep);
+        background-image: radial-gradient(
+          ellipse at 30% 20%,
+          rgba(201, 161, 92, 0.08),
+          transparent 60%
+        );
+        padding: 90px 5% 100px;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: repeating-linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.015) 0px,
+          transparent 1px,
+          transparent 3px
+        );
+      }
+      .hero-eyebrow {
+        color: var(--brass);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 18px;
+        font-weight: 500;
+      }
+      .hero h1 {
+        color: var(--warm-white);
+        font-size: clamp(2.2rem, 4vw, 3.4rem);
+        line-height: 1.1;
+        margin-bottom: 22px;
+      }
+      .hero p {
+        color: rgba(251, 249, 245, 0.72);
+        font-size: 1.05rem;
+        max-width: 480px;
+        margin-bottom: 34px;
+        line-height: 1.6;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 16px;
+      }
+      .btn-primary {
+        background: var(--brass);
+        color: var(--ink);
+        padding: 15px 30px;
+        border-radius: 3px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: background 0.2s;
+      }
+      .btn-primary:hover {
+        background: var(--brass-bright);
+      }
+      .btn-secondary {
+        border: 1px solid rgba(251, 249, 245, 0.35);
+        color: var(--warm-white);
+        padding: 15px 30px;
+        border-radius: 3px;
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
 
-  /* engraving plate visual */
-  .plate-wrap { position: relative; display: flex; justify-content: center; }
-  .plate {
-    background: linear-gradient(160deg, #B8935A, #8F6F3E 55%, #7A5E34);
-    border-radius: 6px;
-    padding: 50px 40px;
-    width: 100%;
-    max-width: 380px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.25);
-    position: relative;
-  }
-  .plate::after {
-    content: '';
-    position: absolute;
-    inset: 8px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 3px;
-    pointer-events: none;
-  }
-  .plate-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    color: rgba(0,0,0,0.45);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .plate-text {
-    font-family: 'Fraunces', serif;
-    font-size: 1.7rem;
-    color: #3a2c14;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.3), 0 -1px 0 rgba(0,0,0,0.35);
-    min-height: 90px;
-    line-height: 1.35;
-  }
-  .plate-cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1.4rem;
-    background: #3a2c14;
-    vertical-align: middle;
-    animation: blink 0.9s step-end infinite;
-  }
-  @keyframes blink { 50% { opacity: 0; } }
-  .plate-footer {
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(0,0,0,0.15);
-    font-size: 0.72rem;
-    color: rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: space-between;
-    font-family: 'IBM Plex Mono', monospace;
-  }
+      /* engraving plate visual */
+      .plate-wrap {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      .plate {
+        background: linear-gradient(160deg, #b8935a, #8f6f3e 55%, #7a5e34);
+        border-radius: 6px;
+        padding: 50px 40px;
+        width: 100%;
+        max-width: 380px;
+        box-shadow:
+          0 30px 60px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        position: relative;
+      }
+      .plate::after {
+        content: "";
+        position: absolute;
+        inset: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+        pointer-events: none;
+      }
+      .plate-label {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.68rem;
+        color: rgba(0, 0, 0, 0.45);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      .plate-text {
+        font-family: "Fraunces", serif;
+        font-size: 1.7rem;
+        color: #3a2c14;
+        text-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.3),
+          0 -1px 0 rgba(0, 0, 0, 0.35);
+        min-height: 90px;
+        line-height: 1.35;
+      }
+      .plate-cursor {
+        display: inline-block;
+        width: 2px;
+        height: 1.4rem;
+        background: #3a2c14;
+        vertical-align: middle;
+        animation: blink 0.9s step-end infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      .plate-footer {
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(0, 0, 0, 0.15);
+        font-size: 0.72rem;
+        color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: space-between;
+        font-family: "IBM Plex Mono", monospace;
+      }
 
-  /* ===== Trust strip ===== */
-  .trust {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: rgba(0,0,0,0.06);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-  .trust-item {
-    background: var(--warm-white);
-    padding: 26px 28px;
-    font-size: 0.86rem;
-  }
-  .trust-item strong { display: block; font-size: 0.92rem; margin-bottom: 3px; }
-  .trust-item span { color: rgba(33,30,25,0.55); }
+      /* ===== Trust strip ===== */
+      .trust {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      .trust-item {
+        background: var(--warm-white);
+        padding: 26px 28px;
+        font-size: 0.86rem;
+      }
+      .trust-item strong {
+        display: block;
+        font-size: 0.92rem;
+        margin-bottom: 3px;
+      }
+      .trust-item span {
+        color: rgba(33, 30, 25, 0.55);
+      }
 
-  /* ===== Section shared ===== */
-  section.block { padding: 80px 5%; }
-  .section-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 40px;
-  }
-  .section-head .eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--brass);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
-  }
-  .section-head h2 { font-size: 1.9rem; color: var(--green-deep); }
-  .view-all { font-size: 0.88rem; font-weight: 600; color: var(--green-deep); border-bottom: 1px solid var(--brass); padding-bottom: 2px; }
+      /* ===== Section shared ===== */
+      section.block {
+        padding: 80px 5%;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 40px;
+      }
+      .section-head .eyebrow {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        color: var(--brass);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 8px;
+      }
+      .section-head h2 {
+        font-size: 1.9rem;
+        color: var(--green-deep);
+      }
+      .view-all {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--green-deep);
+        border-bottom: 1px solid var(--brass);
+        padding-bottom: 2px;
+      }
 
-  /* Category grid */
-  .cat-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-  .cat-card {
-    background: var(--cream);
-    border-radius: 6px;
-    padding: 28px 22px;
-    aspect-ratio: 4/5;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.25s ease;
-    border: 1px solid rgba(0,0,0,0.05);
-  }
-  .cat-card:hover { transform: translateY(-4px); }
-  .cat-num {
-    position: absolute;
-    top: 20px;
-    right: 22px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    color: rgba(33,30,25,0.35);
-  }
-  .cat-icon { font-size: 2.4rem; margin-bottom: 14px; }
-  .cat-card h3 { font-size: 1.1rem; color: var(--green-deep); margin-bottom: 4px; }
-  .cat-card p { font-size: 0.82rem; color: rgba(33,30,25,0.55); }
+      /* Category grid */
+      .cat-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      .cat-card {
+        background: var(--cream);
+        border-radius: 6px;
+        padding: 28px 22px;
+        aspect-ratio: 4/5;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.25s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .cat-card:hover {
+        transform: translateY(-4px);
+      }
+      .cat-num {
+        position: absolute;
+        top: 20px;
+        right: 22px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.75rem;
+        color: rgba(33, 30, 25, 0.35);
+      }
+      .cat-icon {
+        font-size: 2.4rem;
+        margin-bottom: 14px;
+      }
+      .cat-card h3 {
+        font-size: 1.1rem;
+        color: var(--green-deep);
+        margin-bottom: 4px;
+      }
+      .cat-card p {
+        font-size: 0.82rem;
+        color: rgba(33, 30, 25, 0.55);
+      }
 
-  /* Product grid */
-  .prod-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-  .prod-card {
-    background: var(--warm-white);
-    border: 1px solid rgba(0,0,0,0.07);
-    border-radius: 6px;
-    overflow: hidden;
-  }
-  .prod-img {
-    aspect-ratio: 1;
-    background: linear-gradient(135deg, var(--cream), #e7ddc9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.4rem;
-    color: var(--brass);
-    position: relative;
-  }
-  .prod-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: var(--maroon);
-    color: var(--warm-white);
-    font-size: 0.65rem;
-    padding: 4px 9px;
-    border-radius: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-  }
-  .prod-info { padding: 16px 18px 20px; }
-  .prod-info h4 { font-size: 0.95rem; font-weight: 500; margin-bottom: 6px; }
-  .prod-price { font-family: 'IBM Plex Mono', monospace; color: var(--green-deep); font-weight: 500; }
+      /* Product grid */
+      .prod-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+      .prod-card {
+        background: var(--warm-white);
+        border: 1px solid rgba(0, 0, 0, 0.07);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .prod-img {
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, var(--cream), #e7ddc9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.4rem;
+        color: var(--brass);
+        position: relative;
+      }
+      .prod-badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: var(--maroon);
+        color: var(--warm-white);
+        font-size: 0.65rem;
+        padding: 4px 9px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+      }
+      .prod-info {
+        padding: 16px 18px 20px;
+      }
+      .prod-info h4 {
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+      }
+      .prod-price {
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--green-deep);
+        font-weight: 500;
+      }
 
-  /* Personalization band */
-  .personalize-band {
-    background: var(--green-mid);
-    color: var(--warm-white);
-    padding: 70px 5%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-    border-radius: 10px;
-    margin: 0 5%;
-  }
-  .personalize-band h2 { color: var(--warm-white); font-size: 1.9rem; margin-bottom: 16px; }
-  .personalize-band p { color: rgba(251,249,245,0.75); line-height: 1.6; margin-bottom: 26px; }
-  .step-list { display: flex; flex-direction: column; gap: 14px; }
-  .step {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    font-size: 0.92rem;
-  }
-  .step-mark {
-    width: 26px; height: 26px;
-    border: 1px solid var(--brass);
-    color: var(--brass);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    flex-shrink: 0;
-  }
+      /* Personalization band */
+      .personalize-band {
+        background: var(--green-mid);
+        color: var(--warm-white);
+        padding: 70px 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+        border-radius: 10px;
+        margin: 0 5%;
+      }
+      .personalize-band h2 {
+        color: var(--warm-white);
+        font-size: 1.9rem;
+        margin-bottom: 16px;
+      }
+      .personalize-band p {
+        color: rgba(251, 249, 245, 0.75);
+        line-height: 1.6;
+        margin-bottom: 26px;
+      }
+      .step-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .step {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        font-size: 0.92rem;
+      }
+      .step-mark {
+        width: 26px;
+        height: 26px;
+        border: 1px solid var(--brass);
+        color: var(--brass);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        flex-shrink: 0;
+      }
 
-  /* Footer */
-  footer {
-    background: var(--ink);
-    color: rgba(251,249,245,0.65);
-    padding: 60px 5% 30px;
-    margin-top: 90px;
-  }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
-  }
-  .footer-grid h4 { color: var(--warm-white); font-size: 0.85rem; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
-  .footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; }
-  .footer-logo { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--warm-white); margin-bottom: 12px; }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 22px;
-    font-size: 0.78rem;
-    display: flex;
-    justify-content: space-between;
-  }
+      /* Footer */
+      footer {
+        background: var(--ink);
+        color: rgba(251, 249, 245, 0.65);
+        padding: 60px 5% 30px;
+        margin-top: 90px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .footer-grid h4 {
+        color: var(--warm-white);
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .footer-grid ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 0.88rem;
+      }
+      .footer-logo {
+        font-family: "Fraunces", serif;
+        font-size: 1.3rem;
+        color: var(--warm-white);
+        margin-bottom: 12px;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 22px;
+        font-size: 0.78rem;
+        display: flex;
+        justify-content: space-between;
+      }
 
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; padding-top: 50px; }
-    .nav-links { display: none; }
-    .trust { grid-template-columns: repeat(2, 1fr); }
-    .cat-grid, .prod-grid { grid-template-columns: repeat(2, 1fr); }
-    .personalize-band { grid-template-columns: 1fr; margin: 0 4%; padding: 50px 6%; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-  }
-</style>
-</head>
-<body>
-
-  <div class="topbar mono">ENVÍO GRATIS EN PEDIDOS SUPERIORES A 300€ · FABRICADO EN VALENCIA</div>
-
-  <nav>
-    <div class="logo">Trofeo<span>manía</span></div>
-    <div class="nav-links">
-      <a href="productos.html?cat=trofeos">Trofeos</a>
-      <a href="productos.html?cat=medallas">Medallas</a>
-      <a href="productos.html?cat=placas">Placas</a>
-      <a href="productos.html?cat=ajedrez">Ajedrez</a>
-      <a href="blog.html">Blog</a>
-      <a href="contacto.html">Contacto</a>
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+          padding-top: 50px;
+        }
+        .nav-links {
+          display: none;
+        }
+        .trust {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .cat-grid,
+        .prod-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .personalize-band {
+          grid-template-columns: 1fr;
+          margin: 0 4%;
+          padding: 50px 6%;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar mono">
+      ENVÍO GRATIS EN PEDIDOS SUPERIORES A 300€ · FABRICADO EN VALENCIA
     </div>
-    <div class="nav-cta">
-      <a href="#" class="cart-btn">Carrito (0)</a>
-    </div>
-  </nav>
 
-  <section class="hero">
-    <div>
-      <div class="hero-eyebrow">Grabado incluido · Desde 1 unidad</div>
-      <h1>Cada logro merece quedar grabado.</h1>
-      <p>Trofeos, medallas, placas y piezas de ajedrez personalizadas a mano en nuestro taller de Valencia. Tú eliges el texto, nosotros lo hacemos historia.</p>
-      <div class="hero-btns">
-        <a href="productos.html" class="btn-primary">Ver catálogo</a>
-        <a href="productos.html" class="btn-secondary">Personalizar ahora</a>
+    <nav>
+      <div class="logo">Trofeo<span>manía</span></div>
+      <div class="nav-links">
+        <a href="productos.html?cat=trofeos">Trofeos</a>
+        <a href="productos.html?cat=medallas">Medallas</a>
+        <a href="productos.html?cat=placas">Placas</a>
+        <a href="productos.html?cat=ajedrez">Ajedrez</a>
+        <a href="blog.html">Blog</a>
+        <a href="contacto.html">Contacto</a>
       </div>
-    </div>
-    <div class="plate-wrap">
-      <div class="plate">
-        <div class="plate-label">Vista previa de grabado</div>
-        <div class="plate-text" id="plateText">Campeones 2026<span class="plate-cursor"></span></div>
-        <div class="plate-footer">
-          <span>Placa dorada · 15x10cm</span>
-          <span>24,90€</span>
+      <div class="nav-cta">
+        <a href="#" class="cart-btn">Carrito (0)</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <!-- Main Section Information -->
+      <div>
+        <div class="hero-eyebrow">Grabado incluido · Desde 1 unidad</div>
+        <h1>Cada logro merece quedar grabado.</h1>
+        <p>
+          Trofeos, medallas, placas y piezas de ajedrez personalizadas a mano en
+          nuestro taller de Valencia. Tú eliges el texto, nosotros lo hacemos
+          historia.
+        </p>
+        <div class="hero-btns">
+          <a href="productos.html" class="btn-primary">Ver catálogo</a>
+          <a href="productos.html" class="btn-secondary">Personalizar ahora</a>
         </div>
       </div>
+
+      <!-- Trofeos Personalizadas animation -->
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Vista previa de grabado</div>
+          <div class="plate-text" id="plateText">
+            Campeones 2026<span class="plate-cursor"></span>
+          </div>
+          <div class="plate-footer">
+            <span>Placa dorada · 15x10cm</span>
+            <span>24,90€</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="trust-item">
+        <strong>Envío gratis</strong><span>En pedidos +300€</span>
+      </div>
+      <div class="trust-item">
+        <strong>Pago 100% seguro</strong
+        ><span>Tarjeta, Bizum, transferencia</span>
+      </div>
+      <div class="trust-item">
+        <strong>Entrega 5–10 días</strong><span>Fabricación bajo pedido</span>
+      </div>
+      <div class="trust-item">
+        <strong>Atención directa</strong><span>Lun–Vie 9:00–15:00</span>
+      </div>
     </div>
-  </section>
 
-  <div class="trust">
-    <div class="trust-item"><strong>Envío gratis</strong><span>En pedidos +300€</span></div>
-    <div class="trust-item"><strong>Pago 100% seguro</strong><span>Tarjeta, Bizum, transferencia</span></div>
-    <div class="trust-item"><strong>Entrega 5–10 días</strong><span>Fabricación bajo pedido</span></div>
-    <div class="trust-item"><strong>Atención directa</strong><span>Lun–Vie 9:00–15:00</span></div>
-  </div>
+    <section class="block">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Explora</div>
+          <h2>Categorías populares</h2>
+        </div>
+        <a href="productos.html" class="view-all">Ver todas →</a>
+      </div>
+      <div class="cat-grid">
+        <a href="productos.html?cat=trofeos" class="cat-card"
+          ><span class="cat-num">01</span>
+          <div class="cat-icon">🏆</div>
+          <h3>Trofeos</h3>
+          <p>Deportivos y corporativos</p></a
+        >
+        <a href="productos.html?cat=medallas" class="cat-card"
+          ><span class="cat-num">02</span>
+          <div class="cat-icon">🎖️</div>
+          <h3>Medallas</h3>
+          <p>Carreras y competiciones</p></a
+        >
+        <a href="productos.html?cat=placas" class="cat-card"
+          ><span class="cat-num">03</span>
+          <div class="cat-icon">🪧</div>
+          <h3>Placas grabadas</h3>
+          <p>Cristal, madera y metacrilato</p></a
+        >
+        <a href="productos.html?cat=ajedrez" class="cat-card"
+          ><span class="cat-num">04</span>
+          <div class="cat-icon">♟️</div>
+          <h3>Ajedrez</h3>
+          <p>Tableros y piezas de torneo</p></a
+        >
+      </div>
+    </section>
 
-  <section class="block">
-    <div class="section-head">
+    <section class="block" style="padding-top: 0">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Más vendidos</div>
+          <h2>Top ventas de la temporada</h2>
+        </div>
+        <a href="productos.html" class="view-all">Ver tienda →</a>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-card">
+          <div class="prod-img">
+            <span class="prod-badge">Top ventas</span>🏆
+          </div>
+          <div class="prod-info">
+            <h4>Trofeo Copa Dorada 24cm</h4>
+            <div class="prod-price">18,50€</div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-img">🎖️</div>
+          <div class="prod-info">
+            <h4>Medalla Running Grabada</h4>
+            <div class="prod-price">3,90€</div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-img"><span class="prod-badge">Nuevo</span>🪧</div>
+          <div class="prod-info">
+            <h4>Placa Cristal Rectangular</h4>
+            <div class="prod-price">22,00€</div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-img">♟️</div>
+          <div class="prod-info">
+            <h4>Set Ajedrez Torneo Staunton</h4>
+            <div class="prod-price">45,00€</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="personalize-band">
       <div>
-        <div class="eyebrow">Explora</div>
-        <h2>Categorías populares</h2>
+        <div
+          class="eyebrow"
+          style="
+            color: var(--brass);
+            font-family: &quot;IBM Plex Mono&quot;, monospace;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+          "
+        >
+          Cómo funciona
+        </div>
+        <h2>Tu grabado, en 3 pasos</h2>
+        <p>
+          Elige la pieza, escribe el texto que quieres inmortalizar y nosotros
+          la fabricamos y grabamos a mano en nuestro taller.
+        </p>
+        <a href="productos.html" class="btn-primary">Empezar personalización</a>
       </div>
-      <a href="productos.html" class="view-all">Ver todas →</a>
-    </div>
-    <div class="cat-grid">
-      <a href="productos.html?cat=trofeos" class="cat-card"><span class="cat-num">01</span><div class="cat-icon">🏆</div><h3>Trofeos</h3><p>Deportivos y corporativos</p></a>
-      <a href="productos.html?cat=medallas" class="cat-card"><span class="cat-num">02</span><div class="cat-icon">🎖️</div><h3>Medallas</h3><p>Carreras y competiciones</p></a>
-      <a href="productos.html?cat=placas" class="cat-card"><span class="cat-num">03</span><div class="cat-icon">🪧</div><h3>Placas grabadas</h3><p>Cristal, madera y metacrilato</p></a>
-      <a href="productos.html?cat=ajedrez" class="cat-card"><span class="cat-num">04</span><div class="cat-icon">♟️</div><h3>Ajedrez</h3><p>Tableros y piezas de torneo</p></a>
-    </div>
-  </section>
+      <div class="step-list">
+        <div class="step">
+          <div class="step-mark">1</div>
+          <div>
+            <strong>Elige el producto</strong><br />Trofeo, medalla, placa o
+            pieza de ajedrez.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-mark">2</div>
+          <div>
+            <strong>Escribe tu grabado</strong><br />Nombre, fecha, equipo o
+            mensaje.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-mark">3</div>
+          <div>
+            <strong>Lo fabricamos y enviamos</strong><br />Entrega en 5–10 días
+            laborables.
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="block" style="padding-top:0;">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Más vendidos</div>
-        <h2>Top ventas de la temporada</h2>
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Trofeomanía</div>
+          <p style="font-size: 0.85rem; line-height: 1.6">
+            Tu tienda especializada en trofeos, ajedrez y premios
+            conmemorativos. Fabricación y grabado en Valencia.
+          </p>
+        </div>
+        <div>
+          <h4>Tienda</h4>
+          <ul>
+            <li><a href="productos.html?cat=trofeos">Trofeos</a></li>
+            <li><a href="productos.html?cat=medallas">Medallas</a></li>
+            <li><a href="productos.html?cat=placas">Placas</a></li>
+            <li><a href="productos.html?cat=ajedrez">Ajedrez</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="legal.html">Condiciones de venta</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li>Dr. Zamenhoff, 32 — Valencia</li>
+            <li>info@sedesport.es</li>
+            <li>962 057 303</li>
+          </ul>
+        </div>
       </div>
-      <a href="productos.html" class="view-all">Ver tienda →</a>
-    </div>
-    <div class="prod-grid">
-      <div class="prod-card">
-        <div class="prod-img"><span class="prod-badge">Top ventas</span>🏆</div>
-        <div class="prod-info"><h4>Trofeo Copa Dorada 24cm</h4><div class="prod-price">18,50€</div></div>
+      <div class="footer-bottom">
+        <span>© 2026 Trofeomanía (Sede Sport)</span>
+        <span>Diseño renovado</span>
       </div>
-      <div class="prod-card">
-        <div class="prod-img">🎖️</div>
-        <div class="prod-info"><h4>Medalla Running Grabada</h4><div class="prod-price">3,90€</div></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-img"><span class="prod-badge">Nuevo</span>🪧</div>
-        <div class="prod-info"><h4>Placa Cristal Rectangular</h4><div class="prod-price">22,00€</div></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-img">♟️</div>
-        <div class="prod-info"><h4>Set Ajedrez Torneo Staunton</h4><div class="prod-price">45,00€</div></div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <section class="personalize-band">
-    <div>
-      <div class="eyebrow" style="color:var(--brass); font-family:'IBM Plex Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px;">Cómo funciona</div>
-      <h2>Tu grabado, en 3 pasos</h2>
-      <p>Elige la pieza, escribe el texto que quieres inmortalizar y nosotros la fabricamos y grabamos a mano en nuestro taller.</p>
-      <a href="productos.html" class="btn-primary">Empezar personalización</a>
-    </div>
-    <div class="step-list">
-      <div class="step"><div class="step-mark">1</div><div><strong>Elige el producto</strong><br>Trofeo, medalla, placa o pieza de ajedrez.</div></div>
-      <div class="step"><div class="step-mark">2</div><div><strong>Escribe tu grabado</strong><br>Nombre, fecha, equipo o mensaje.</div></div>
-      <div class="step"><div class="step-mark">3</div><div><strong>Lo fabricamos y enviamos</strong><br>Entrega en 5–10 días laborables.</div></div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Trofeomanía</div>
-        <p style="font-size:0.85rem; line-height:1.6;">Tu tienda especializada en trofeos, ajedrez y premios conmemorativos. Fabricación y grabado en Valencia.</p>
-      </div>
-      <div>
-        <h4>Tienda</h4>
-        <ul><li><a href="productos.html?cat=trofeos">Trofeos</a></li><li><a href="productos.html?cat=medallas">Medallas</a></li><li><a href="productos.html?cat=placas">Placas</a></li><li><a href="productos.html?cat=ajedrez">Ajedrez</a></li></ul>
-      </div>
-      <div>
-        <h4>Empresa</h4>
-        <ul><li><a href="sobre-nosotros.html">Sobre nosotros</a></li><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="legal.html">Condiciones de venta</a></li></ul>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <ul>
-          <li>Dr. Zamenhoff, 32 — Valencia</li>
-          <li>info@sedesport.es</li>
-          <li>962 057 303</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Trofeomanía (Sede Sport)</span>
-      <span>Diseño renovado</span>
-    </div>
-  </footer>
-
-<script>
-  const words = ["Campeones 2026", "María López", "1er Puesto", "Equipo Halcones"];
-  let wi = 0, ci = 0, deleting = false;
-  const el = document.getElementById('plateText');
-  function tick() {
-    const word = words[wi];
-    if (!deleting) {
-      ci++;
-      if (ci > word.length) { deleting = true; setTimeout(tick, 1400); return; }
-    } else {
-      ci--;
-      if (ci < 0) { deleting = false; wi = (wi + 1) % words.length; ci = 0; }
-    }
-    el.innerHTML = word.slice(0, ci) + '<span class="plate-cursor"></span>';
-    setTimeout(tick, deleting ? 60 : 110);
-  }
-  tick();
-</script>
-
-</body>
+    <script>
+      const words = [
+        "Campeones 2026",
+        "María López",
+        "1er Puesto",
+        "Equipo Halcones",
+      ];
+      let wi = 0,
+        ci = 0,
+        deleting = false;
+      const el = document.getElementById("plateText");
+      function tick() {
+        const word = words[wi];
+        if (!deleting) {
+          ci++;
+          if (ci > word.length) {
+            deleting = true;
+            setTimeout(tick, 1400);
+            return;
+          }
+        } else {
+          ci--;
+          if (ci < 0) {
+            deleting = false;
+            wi = (wi + 1) % words.length;
+            ci = 0;
+          }
+        }
+        el.innerHTML = word.slice(0, ci) + '<span class="plate-cursor"></span>';
+        setTimeout(tick, deleting ? 60 : 110);
+      }
+      tick();
+    </script>
+  </body>
 </html>

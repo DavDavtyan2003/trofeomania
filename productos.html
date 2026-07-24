@@ -1,384 +1,774 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trofeos, Medallas y Placas Personalizadas | Trofeomanía</title>
-<meta name="description" content="Compra trofeos, medallas, placas grabadas y ajedrez de competición. Personalización incluida, fabricación en Valencia, envío gratis desde 300€.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --green-deep: #16302A;
-    --green-mid: #234238;
-    --brass: #C9A15C;
-    --brass-bright: #E0BD7D;
-    --cream: #F3EDE1;
-    --warm-white: #FBF9F5;
-    --ink: #211E19;
-    --maroon: #6B222C;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Work Sans', sans-serif;
-    background: var(--warm-white);
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-  }
-  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; }
-  a { text-decoration: none; color: inherit; }
-  .mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.04em; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trofeos, Medallas y Placas Personalizadas | Trofeomanía</title>
+    <meta
+      name="description"
+      content="Compra trofeos, medallas, placas grabadas y ajedrez de competición. Personalización incluida, fabricación en Valencia, envío gratis desde 300€."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green-deep: #16302a;
+        --green-mid: #234238;
+        --brass: #c9a15c;
+        --brass-bright: #e0bd7d;
+        --cream: #f3ede1;
+        --warm-white: #fbf9f5;
+        --ink: #211e19;
+        --maroon: #6b222c;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Work Sans", sans-serif;
+        background: var(--warm-white);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .mono {
+        font-family: "IBM Plex Mono", monospace;
+        letter-spacing: 0.04em;
+      }
 
-  .topbar { background: var(--ink); color: var(--cream); text-align: center; font-size: 0.78rem; padding: 8px; letter-spacing: 0.03em; }
+      .topbar {
+        background: var(--ink);
+        color: var(--cream);
+        text-align: center;
+        font-size: 0.78rem;
+        padding: 8px;
+        letter-spacing: 0.03em;
+      }
 
-  nav {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 20px 5%; background: var(--warm-white);
-    position: sticky; top: 0; z-index: 50;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-  .logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--green-deep); }
-  .logo span { color: var(--brass); }
-  .nav-links { display: flex; gap: 32px; font-size: 0.92rem; font-weight: 500; }
-  .nav-links a:hover { color: var(--brass); }
-  .cart-btn { background: var(--green-deep); color: var(--cream); padding: 10px 20px; border-radius: 3px; font-size: 0.85rem; font-weight: 500; }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 5%;
+        background: var(--warm-white);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      .logo {
+        font-family: "Fraunces", serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--green-deep);
+      }
+      .logo span {
+        color: var(--brass);
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        font-size: 0.92rem;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: var(--brass);
+      }
+      .cart-btn {
+        background: var(--green-deep);
+        color: var(--cream);
+        padding: 10px 20px;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
 
-  /* Page header */
-  .page-header {
-    background: var(--green-deep);
-    padding: 46px 5% 40px;
-    color: var(--warm-white);
-  }
-  .breadcrumb { font-size: 0.82rem; color: rgba(251,249,245,0.55); margin-bottom: 14px; }
-  .breadcrumb a:hover { color: var(--brass); }
-  .page-header h1 { font-size: 2rem; margin-bottom: 6px; }
-  .page-header p { color: rgba(251,249,245,0.65); font-size: 0.95rem; }
+      /* Page header */
+      .page-header {
+        background: var(--green-deep);
+        padding: 46px 5% 40px;
+        color: var(--warm-white);
+      }
+      .breadcrumb {
+        font-size: 0.82rem;
+        color: rgba(251, 249, 245, 0.55);
+        margin-bottom: 14px;
+      }
+      .breadcrumb a:hover {
+        color: var(--brass);
+      }
+      .page-header h1 {
+        font-size: 2rem;
+        margin-bottom: 6px;
+      }
+      .page-header p {
+        color: rgba(251, 249, 245, 0.65);
+        font-size: 0.95rem;
+      }
 
-  /* Layout: filters + grid */
-  .shop-layout {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 40px;
-    padding: 50px 5% 90px;
-  }
+      /* Layout: filters + grid */
+      .shop-layout {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: 40px;
+        padding: 50px 5% 90px;
+      }
 
-  /* Filters sidebar */
-  .filters h3 {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: rgba(33,30,25,0.5);
-    margin-bottom: 14px;
-    margin-top: 26px;
-  }
-  .filters h3:first-child { margin-top: 0; }
-  .filter-group { display: flex; flex-direction: column; gap: 10px; }
-  .filter-option {
-    display: flex; align-items: center; gap: 10px;
-    font-size: 0.9rem; cursor: pointer;
-  }
-  .filter-option input { accent-color: var(--brass); width: 15px; height: 15px; }
-  .filter-option.active { color: var(--green-deep); font-weight: 600; }
-  .price-range {
-    background: var(--cream);
-    border-radius: 6px;
-    padding: 16px;
-    font-size: 0.85rem;
-    color: rgba(33,30,25,0.6);
-  }
-  .price-range input[type="range"] { width: 100%; margin-top: 10px; accent-color: var(--brass); }
+      /* Filters sidebar */
+      .filters h3 {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: rgba(33, 30, 25, 0.5);
+        margin-bottom: 14px;
+        margin-top: 26px;
+      }
+      .filters h3:first-child {
+        margin-top: 0;
+      }
+      .filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .filter-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+      .filter-option input {
+        accent-color: var(--brass);
+        width: 15px;
+        height: 15px;
+      }
+      .filter-option.active {
+        color: var(--green-deep);
+        font-weight: 600;
+      }
+      .price-range {
+        background: var(--cream);
+        border-radius: 6px;
+        padding: 16px;
+        font-size: 0.85rem;
+        color: rgba(33, 30, 25, 0.6);
+      }
+      .price-range input[type="range"] {
+        width: 100%;
+        margin-top: 10px;
+        accent-color: var(--brass);
+      }
 
-  /* Toolbar */
-  .shop-toolbar {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 26px; padding-bottom: 18px;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-  }
-  .result-count { font-size: 0.9rem; color: rgba(33,30,25,0.6); }
-  .sort-select {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 0.88rem;
-    padding: 8px 14px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    background: var(--warm-white);
-  }
+      /* Toolbar */
+      .shop-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 26px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      .result-count {
+        font-size: 0.9rem;
+        color: rgba(33, 30, 25, 0.6);
+      }
+      .sort-select {
+        font-family: "Work Sans", sans-serif;
+        font-size: 0.88rem;
+        padding: 8px 14px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        background: var(--warm-white);
+      }
 
-  /* Product grid */
-  .prod-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .prod-card {
-    display: block;
-    background: var(--warm-white);
-    border: 1px solid rgba(0,0,0,0.07);
-    border-radius: 6px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .prod-card:hover { transform: translateY(-3px); box-shadow: 0 14px 26px rgba(22,48,42,0.1); }
-  .prod-img {
-    aspect-ratio: 1;
-    background: linear-gradient(135deg, var(--cream), #e7ddc9);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2.6rem; color: var(--brass);
-    position: relative;
-  }
-  .prod-badge {
-    position: absolute; top: 12px; left: 12px;
-    background: var(--maroon); color: var(--warm-white);
-    font-size: 0.65rem; padding: 4px 9px; border-radius: 3px;
-    text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;
-  }
-  .prod-fav {
-    position: absolute; top: 10px; right: 10px;
-    width: 32px; height: 32px; border-radius: 50%;
-    background: rgba(251,249,245,0.9);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.95rem;
-  }
-  .prod-info { padding: 16px 18px 20px; }
-  .prod-cat { font-size: 0.72rem; color: var(--brass); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px; font-weight: 600; }
-  .prod-info h4 { font-size: 0.98rem; font-weight: 500; margin-bottom: 8px; line-height: 1.35; }
-  .prod-bottom { display: flex; justify-content: space-between; align-items: center; }
-  .prod-price { font-family: 'IBM Plex Mono', monospace; color: var(--green-deep); font-weight: 600; font-size: 1.02rem; }
-  .prod-add {
-    background: var(--cream); color: var(--green-deep);
-    width: 34px; height: 34px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem; font-weight: 600;
-    transition: background 0.2s;
-  }
-  .prod-add:hover { background: var(--brass); color: var(--warm-white); }
+      /* Product grid */
+      .prod-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 44px;
+      }
+      .prod-card {
+        display: block;
+        background: var(--warm-white);
+        border: 1px solid rgba(0, 0, 0, 0.07);
+        border-radius: 6px;
+        overflow: hidden;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .prod-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 26px rgba(22, 48, 42, 0.1);
+      }
+      .prod-img {
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, var(--cream), #e7ddc9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.6rem;
+        color: var(--brass);
+        position: relative;
+      }
+      .prod-badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: var(--maroon);
+        color: var(--warm-white);
+        font-size: 0.65rem;
+        padding: 4px 9px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+      }
+      .prod-fav {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(251, 249, 245, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.95rem;
+      }
+      .prod-info {
+        padding: 16px 18px 20px;
+      }
+      .prod-cat {
+        font-size: 0.72rem;
+        color: var(--brass);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+      .prod-info h4 {
+        font-size: 0.98rem;
+        font-weight: 500;
+        margin-bottom: 8px;
+        line-height: 1.35;
+      }
+      .prod-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .prod-price {
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--green-deep);
+        font-weight: 600;
+        font-size: 1.02rem;
+      }
+      .prod-add {
+        background: var(--cream);
+        color: var(--green-deep);
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: background 0.2s;
+      }
+      .prod-add:hover {
+        background: var(--brass);
+        color: var(--warm-white);
+      }
 
-  /* Pagination */
-  .pagination {
-    display: flex; justify-content: center; gap: 8px;
-    margin-top: 54px;
-  }
-  .page-btn {
-    width: 38px; height: 38px;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 4px; font-size: 0.88rem; font-weight: 500;
-    border: 1px solid rgba(0,0,0,0.1);
-  }
-  .page-btn.active { background: var(--green-deep); color: var(--warm-white); border-color: var(--green-deep); }
+      /* Pagination */
+      .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 54px;
+      }
+      .page-btn {
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        font-size: 0.88rem;
+        font-weight: 500;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .page-btn.active {
+        background: var(--green-deep);
+        color: var(--warm-white);
+        border-color: var(--green-deep);
+      }
 
-  footer {
-    background: var(--ink); color: rgba(251,249,245,0.65);
-    padding: 60px 5% 30px;
-  }
-  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-  .footer-grid h4 { color: var(--warm-white); font-size: 0.85rem; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
-  .footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; }
-  .footer-logo { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--warm-white); margin-bottom: 12px; }
-  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 22px; font-size: 0.78rem; display: flex; justify-content: space-between; }
+      footer {
+        background: var(--ink);
+        color: rgba(251, 249, 245, 0.65);
+        padding: 60px 5% 30px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .footer-grid h4 {
+        color: var(--warm-white);
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .footer-grid ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 0.88rem;
+      }
+      .footer-logo {
+        font-family: "Fraunces", serif;
+        font-size: 1.3rem;
+        color: var(--warm-white);
+        margin-bottom: 12px;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 22px;
+        font-size: 0.78rem;
+        display: flex;
+        justify-content: space-between;
+      }
 
-  @media (max-width: 900px) {
-    .nav-links { display: none; }
-    .shop-layout { grid-template-columns: 1fr; }
-    .prod-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-  }
-</style>
-</head>
-<body>
-
-  <div class="topbar mono">ENVÍO GRATIS EN PEDIDOS SUPERIORES A 300€ · FABRICADO EN VALENCIA</div>
-
-  <nav>
-    <div class="logo">Trofeo<span>manía</span></div>
-    <div class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="productos.html">Productos</a>
-      <a href="#">Blog</a>
-      <a href="#">Contacto</a>
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+        }
+        .shop-layout {
+          grid-template-columns: 1fr;
+        }
+        .prod-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar mono">
+      ENVÍO GRATIS EN PEDIDOS SUPERIORES A 300€ · FABRICADO EN VALENCIA
     </div>
-    <a href="#" class="cart-btn">Carrito (0)</a>
-  </nav>
 
-  <div class="page-header">
-    <div class="breadcrumb"><a href="index.html">Inicio</a> / Productos</div>
-    <h1>Todos los productos</h1>
-    <p>Trofeos, medallas, placas y ajedrez — personalización incluida</p>
-  </div>
-
-  <div class="shop-layout">
-    <aside class="filters">
-      <h3>Categoría</h3>
-      <div class="filter-group" id="catFilters">
-        <label class="filter-option active"><input type="checkbox" data-cat="todos" checked> Todos (48)</label>
-        <label class="filter-option"><input type="checkbox" data-cat="trofeos"> Trofeos (18)</label>
-        <label class="filter-option"><input type="checkbox" data-cat="medallas"> Medallas (14)</label>
-        <label class="filter-option"><input type="checkbox" data-cat="placas"> Placas grabadas (9)</label>
-        <label class="filter-option"><input type="checkbox" data-cat="ajedrez"> Ajedrez (7)</label>
+    <nav>
+      <div class="logo">Trofeo<span>manía</span></div>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="#">Blog</a>
+        <a href="#">Contacto</a>
       </div>
+      <a href="#" class="cart-btn">Carrito (0)</a>
+    </nav>
 
-      <h3>Material</h3>
-      <div class="filter-group" id="materialFilters">
-        <label class="filter-option"><input type="checkbox" data-material="metal"> Metal dorado</label>
-        <label class="filter-option"><input type="checkbox" data-material="cristal"> Cristal</label>
-        <label class="filter-option"><input type="checkbox" data-material="madera"> Madera</label>
-        <label class="filter-option"><input type="checkbox" data-material="metacrilato"> Metacrilato</label>
-      </div>
+    <div class="page-header">
+      <div class="breadcrumb"><a href="index.html">Inicio</a> / Productos</div>
+      <h1>Todos los productos</h1>
+      <p>Trofeos, medallas, placas y ajedrez — personalización incluida</p>
+    </div>
 
-      <h3>Precio</h3>
-      <div class="price-range">
-        <div style="display:flex; justify-content:space-between;"><span>0€</span><span id="priceMaxLabel">50€+</span></div>
-        <input type="range" id="priceSlider" min="0" max="50" value="50">
-      </div>
-    </aside>
+    <div class="shop-layout">
+      <aside class="filters">
+        <h3>Categoría</h3>
+        <div class="filter-group" id="catFilters">
+          <label class="filter-option active"
+            ><input type="checkbox" data-cat="todos" checked /> Todos
+            (48)</label
+          >
+          <label class="filter-option"
+            ><input type="checkbox" data-cat="trofeos" /> Trofeos (18)</label
+          >
+          <label class="filter-option"
+            ><input type="checkbox" data-cat="medallas" /> Medallas (14)</label
+          >
+          <label class="filter-option"
+            ><input type="checkbox" data-cat="placas" /> Placas grabadas
+            (9)</label
+          >
+          <label class="filter-option"
+            ><input type="checkbox" data-cat="ajedrez" /> Ajedrez (7)</label
+          >
+        </div>
 
-    <div class="shop-main">
-      <div class="shop-toolbar">
-        <span class="result-count">48 productos</span>
-        <select class="sort-select">
-          <option>Más vendidos</option>
-          <option>Precio: menor a mayor</option>
-          <option>Precio: mayor a menor</option>
-          <option>Novedades</option>
-        </select>
-      </div>
+        <h3>Material</h3>
+        <div class="filter-group" id="materialFilters">
+          <label class="filter-option"
+            ><input type="checkbox" data-material="metal" /> Metal dorado</label
+          >
+          <label class="filter-option"
+            ><input type="checkbox" data-material="cristal" /> Cristal</label
+          >
+          <label class="filter-option"
+            ><input type="checkbox" data-material="madera" /> Madera</label
+          >
+          <label class="filter-option"
+            ><input type="checkbox" data-material="metacrilato" />
+            Metacrilato</label
+          >
+        </div>
 
-      <div class="prod-grid" id="prodGrid">
-        <a href="producto.html?id=trofeo-copa-dorada" class="prod-card" data-cat="trofeos" data-material="metal" data-price="18.50">
-          <div class="prod-img"><span class="prod-badge">Top ventas</span><span class="prod-fav">♡</span>🏆</div>
-          <div class="prod-info"><div class="prod-cat">Trofeos</div><h4>Trofeo Copa Dorada 24cm</h4><div class="prod-bottom"><span class="prod-price">18,50€</span><span class="prod-add">+</span></div></div>
-        </a>
-        <a href="producto.html?id=medalla-running" class="prod-card" data-cat="medallas" data-material="metal" data-price="3.90">
-          <div class="prod-img"><span class="prod-fav">♡</span>🎖️</div>
-          <div class="prod-info"><div class="prod-cat">Medallas</div><h4>Medalla Running Grabada</h4><div class="prod-bottom"><span class="prod-price">3,90€</span><span class="prod-add">+</span></div></div>
-        </a>
-        <a href="producto.html?id=placa-cristal" class="prod-card" data-cat="placas" data-material="cristal" data-price="22.00">
-          <div class="prod-img"><span class="prod-badge">Nuevo</span><span class="prod-fav">♡</span>🪧</div>
-          <div class="prod-info"><div class="prod-cat">Placas</div><h4>Placa Cristal Rectangular</h4><div class="prod-bottom"><span class="prod-price">22,00€</span><span class="prod-add">+</span></div></div>
-        </a>
-        <a href="producto.html?id=ajedrez-staunton" class="prod-card" data-cat="ajedrez" data-material="madera" data-price="45.00">
-          <div class="prod-img"><span class="prod-fav">♡</span>♟️</div>
-          <div class="prod-info"><div class="prod-cat">Ajedrez</div><h4>Set Ajedrez Torneo Staunton</h4><div class="prod-bottom"><span class="prod-price">45,00€</span><span class="prod-add">+</span></div></div>
-        </a>
-        <a href="producto.html?id=trofeo-futbol-base" class="prod-card" data-cat="trofeos" data-material="metal" data-price="21.90">
-          <div class="prod-img"><span class="prod-fav">♡</span>🏆</div>
-          <div class="prod-info"><div class="prod-cat">Trofeos</div><h4>Trofeo Fútbol Base 30cm</h4><div class="prod-bottom"><span class="prod-price">21,90€</span><span class="prod-add">+</span></div></div>
-        </a>
-        <a href="producto.html?id=medalla-infantil" class="prod-card" data-cat="medallas" data-material="metal" data-price="2.50">
-          <div class="prod-img"><span class="prod-fav">♡</span>🎖️</div>
-          <div class="prod-info"><div class="prod-cat">Medallas</div><h4>Medalla Infantil Participación</h4><div class="prod-bottom"><span class="prod-price">2,50€</span><span class="prod-add">+</span></div></div>
-        </a>
-        <a href="producto.html?id=placa-madera" class="prod-card" data-cat="placas" data-material="madera" data-price="16.00">
-          <div class="prod-img"><span class="prod-badge">Top ventas</span><span class="prod-fav">♡</span>🪧</div>
-          <div class="prod-info"><div class="prod-cat">Placas</div><h4>Placa Madera Grabado Láser</h4><div class="prod-bottom"><span class="prod-price">16,00€</span><span class="prod-add">+</span></div></div>
-        </a>
-        <a href="producto.html?id=ajedrez-viaje" class="prod-card" data-cat="ajedrez" data-material="metacrilato" data-price="14.90">
-          <div class="prod-img"><span class="prod-fav">♡</span>♟️</div>
-          <div class="prod-info"><div class="prod-cat">Ajedrez</div><h4>Tablero Magnético de Viaje</h4><div class="prod-bottom"><span class="prod-price">14,90€</span><span class="prod-add">+</span></div></div>
-        </a>
-        <a href="producto.html?id=trofeo-corporativo" class="prod-card" data-cat="trofeos" data-material="cristal" data-price="32.00">
-          <div class="prod-img"><span class="prod-fav">♡</span>🏆</div>
-          <div class="prod-info"><div class="prod-cat">Trofeos</div><h4>Trofeo Corporativo Cristal</h4><div class="prod-bottom"><span class="prod-price">32,00€</span><span class="prod-add">+</span></div></div>
-        </a>
-      </div>
-      <p id="noResults" style="display:none; text-align:center; padding:60px 0; color:rgba(33,30,25,0.5);">No hay productos en esta categoría todavía.</p>
+        <h3>Precio</h3>
+        <div class="price-range">
+          <div style="display: flex; justify-content: space-between">
+            <span>0€</span><span id="priceMaxLabel">50€+</span>
+          </div>
+          <input type="range" id="priceSlider" min="0" max="50" value="50" />
+        </div>
+      </aside>
 
-      <div class="pagination">
-        <span class="page-btn active">1</span>
-        <span class="page-btn">2</span>
-        <span class="page-btn">3</span>
-        <span class="page-btn">→</span>
+      <div class="shop-main">
+        <div class="shop-toolbar">
+          <span class="result-count">48 productos</span>
+          <select class="sort-select">
+            <option>Más vendidos</option>
+            <option>Precio: menor a mayor</option>
+            <option>Precio: mayor a menor</option>
+            <option>Novedades</option>
+          </select>
+        </div>
+
+        <div class="prod-grid" id="prodGrid">
+          <a
+            href="producto.html?id=trofeo-copa-dorada"
+            class="prod-card"
+            data-cat="trofeos"
+            data-material="metal"
+            data-price="18.50"
+          >
+            <div class="prod-img">
+              <span class="prod-badge">Top ventas</span
+              ><span class="prod-fav">♡</span>🏆
+            </div>
+            <div class="prod-info">
+              <div class="prod-cat">Trofeos</div>
+              <h4>Trofeo Copa Dorada 24cm</h4>
+              <div class="prod-bottom">
+                <span class="prod-price">18,50€</span
+                ><span class="prod-add">+</span>
+              </div>
+            </div>
+          </a>
+          <a
+            href="producto.html?id=medalla-running"
+            class="prod-card"
+            data-cat="medallas"
+            data-material="metal"
+            data-price="3.90"
+          >
+            <div class="prod-img"><span class="prod-fav">♡</span>🎖️</div>
+            <div class="prod-info">
+              <div class="prod-cat">Medallas</div>
+              <h4>Medalla Running Grabada</h4>
+              <div class="prod-bottom">
+                <span class="prod-price">3,90€</span
+                ><span class="prod-add">+</span>
+              </div>
+            </div>
+          </a>
+          <a
+            href="producto.html?id=placa-cristal"
+            class="prod-card"
+            data-cat="placas"
+            data-material="cristal"
+            data-price="22.00"
+          >
+            <div class="prod-img">
+              <span class="prod-badge">Nuevo</span
+              ><span class="prod-fav">♡</span>🪧
+            </div>
+            <div class="prod-info">
+              <div class="prod-cat">Placas</div>
+              <h4>Placa Cristal Rectangular</h4>
+              <div class="prod-bottom">
+                <span class="prod-price">22,00€</span
+                ><span class="prod-add">+</span>
+              </div>
+            </div>
+          </a>
+          <a
+            href="producto.html?id=ajedrez-staunton"
+            class="prod-card"
+            data-cat="ajedrez"
+            data-material="madera"
+            data-price="45.00"
+          >
+            <div class="prod-img"><span class="prod-fav">♡</span>♟️</div>
+            <div class="prod-info">
+              <div class="prod-cat">Ajedrez</div>
+              <h4>Set Ajedrez Torneo Staunton</h4>
+              <div class="prod-bottom">
+                <span class="prod-price">45,00€</span
+                ><span class="prod-add">+</span>
+              </div>
+            </div>
+          </a>
+          <a
+            href="producto.html?id=trofeo-futbol-base"
+            class="prod-card"
+            data-cat="trofeos"
+            data-material="metal"
+            data-price="21.90"
+          >
+            <div class="prod-img"><span class="prod-fav">♡</span>🏆</div>
+            <div class="prod-info">
+              <div class="prod-cat">Trofeos</div>
+              <h4>Trofeo Fútbol Base 30cm</h4>
+              <div class="prod-bottom">
+                <span class="prod-price">21,90€</span
+                ><span class="prod-add">+</span>
+              </div>
+            </div>
+          </a>
+          <a
+            href="producto.html?id=medalla-infantil"
+            class="prod-card"
+            data-cat="medallas"
+            data-material="metal"
+            data-price="2.50"
+          >
+            <div class="prod-img"><span class="prod-fav">♡</span>🎖️</div>
+            <div class="prod-info">
+              <div class="prod-cat">Medallas</div>
+              <h4>Medalla Infantil Participación</h4>
+              <div class="prod-bottom">
+                <span class="prod-price">2,50€</span
+                ><span class="prod-add">+</span>
+              </div>
+            </div>
+          </a>
+          <a
+            href="producto.html?id=placa-madera"
+            class="prod-card"
+            data-cat="placas"
+            data-material="madera"
+            data-price="16.00"
+          >
+            <div class="prod-img">
+              <span class="prod-badge">Top ventas</span
+              ><span class="prod-fav">♡</span>🪧
+            </div>
+            <div class="prod-info">
+              <div class="prod-cat">Placas</div>
+              <h4>Placa Madera Grabado Láser</h4>
+              <div class="prod-bottom">
+                <span class="prod-price">16,00€</span
+                ><span class="prod-add">+</span>
+              </div>
+            </div>
+          </a>
+          <a
+            href="producto.html?id=ajedrez-viaje"
+            class="prod-card"
+            data-cat="ajedrez"
+            data-material="metacrilato"
+            data-price="14.90"
+          >
+            <div class="prod-img"><span class="prod-fav">♡</span>♟️</div>
+            <div class="prod-info">
+              <div class="prod-cat">Ajedrez</div>
+              <h4>Tablero Magnético de Viaje</h4>
+              <div class="prod-bottom">
+                <span class="prod-price">14,90€</span
+                ><span class="prod-add">+</span>
+              </div>
+            </div>
+          </a>
+          <a
+            href="producto.html?id=trofeo-corporativo"
+            class="prod-card"
+            data-cat="trofeos"
+            data-material="cristal"
+            data-price="32.00"
+          >
+            <div class="prod-img"><span class="prod-fav">♡</span>🏆</div>
+            <div class="prod-info">
+              <div class="prod-cat">Trofeos</div>
+              <h4>Trofeo Corporativo Cristal</h4>
+              <div class="prod-bottom">
+                <span class="prod-price">32,00€</span
+                ><span class="prod-add">+</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <p
+          id="noResults"
+          style="
+            display: none;
+            text-align: center;
+            padding: 60px 0;
+            color: rgba(33, 30, 25, 0.5);
+          "
+        >
+          No hay productos en esta categoría todavía.
+        </p>
+
+        <div class="pagination">
+          <span class="page-btn active">1</span>
+          <span class="page-btn">2</span>
+          <span class="page-btn">3</span>
+          <span class="page-btn">→</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Trofeomanía</div>
-        <p style="font-size:0.85rem; line-height:1.6;">Tu tienda especializada en trofeos, ajedrez y premios conmemorativos. Fabricación y grabado en Valencia.</p>
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Trofeomanía</div>
+          <p style="font-size: 0.85rem; line-height: 1.6">
+            Tu tienda especializada en trofeos, ajedrez y premios
+            conmemorativos. Fabricación y grabado en Valencia.
+          </p>
+        </div>
+        <div>
+          <h4>Tienda</h4>
+          <ul>
+            <li><a href="#">Trofeos</a></li>
+            <li><a href="#">Medallas</a></li>
+            <li><a href="#">Placas</a></li>
+            <li><a href="#">Ajedrez</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Condiciones de venta</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li>Dr. Zamenhoff, 32 — Valencia</li>
+            <li>info@sedesport.es</li>
+            <li>962 057 303</li>
+          </ul>
+        </div>
       </div>
-      <div><h4>Tienda</h4><ul><li><a href="#">Trofeos</a></li><li><a href="#">Medallas</a></li><li><a href="#">Placas</a></li><li><a href="#">Ajedrez</a></li></ul></div>
-      <div><h4>Empresa</h4><ul><li><a href="#">Sobre nosotros</a></li><li><a href="#">Blog</a></li><li><a href="#">Contacto</a></li><li><a href="#">Condiciones de venta</a></li></ul></div>
-      <div><h4>Contacto</h4><ul><li>Dr. Zamenhoff, 32 — Valencia</li><li>info@sedesport.es</li><li>962 057 303</li></ul></div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Trofeomanía (Sede Sport)</span>
-      <span>Diseño renovado</span>
-    </div>
-  </footer>
+      <div class="footer-bottom">
+        <span>© 2026 Trofeomanía (Sede Sport)</span>
+        <span>Diseño renovado</span>
+      </div>
+    </footer>
 
-<script>
-  const categoryCheckboxes = document.querySelectorAll('#catFilters input[type="checkbox"]');
-  const materialCheckboxes = document.querySelectorAll('#materialFilters input[type="checkbox"]');
-  const priceSlider = document.getElementById('priceSlider');
-  const priceMaxLabel = document.getElementById('priceMaxLabel');
-  const cards = document.querySelectorAll('#prodGrid .prod-card');
-  const noResults = document.getElementById('noResults');
-  const resultCount = document.querySelector('.result-count');
+    <script>
+      const categoryCheckboxes = document.querySelectorAll(
+        '#catFilters input[type="checkbox"]',
+      );
+      const materialCheckboxes = document.querySelectorAll(
+        '#materialFilters input[type="checkbox"]',
+      );
+      const priceSlider = document.getElementById("priceSlider");
+      const priceMaxLabel = document.getElementById("priceMaxLabel");
+      const cards = document.querySelectorAll("#prodGrid .prod-card");
+      const noResults = document.getElementById("noResults");
+      const resultCount = document.querySelector(".result-count");
 
-  let selectedCat = 'todos';
+      let selectedCat = "todos";
 
-  function getSelectedMaterials() {
-    return Array.from(materialCheckboxes).filter(cb => cb.checked).map(cb => cb.dataset.material);
-  }
+      function getSelectedMaterials() {
+        return Array.from(materialCheckboxes)
+          .filter((cb) => cb.checked)
+          .map((cb) => cb.dataset.material);
+      }
 
-  function applyFilters() {
-    const selectedMaterials = getSelectedMaterials(); // empty array = no material filter applied
-    const maxPrice = parseFloat(priceSlider.value);
-    let visibleCount = 0;
+      function applyFilters() {
+        const selectedMaterials = getSelectedMaterials(); // empty array = no material filter applied
+        const maxPrice = parseFloat(priceSlider.value);
+        let visibleCount = 0;
 
-    cards.forEach(card => {
-      const matchesCat = selectedCat === 'todos' || card.dataset.cat === selectedCat;
-      const matchesMaterial = selectedMaterials.length === 0 || selectedMaterials.includes(card.dataset.material);
-      const matchesPrice = parseFloat(card.dataset.price) <= maxPrice;
-      const visible = matchesCat && matchesMaterial && matchesPrice;
-      card.style.display = visible ? '' : 'none';
-      if (visible) visibleCount++;
-    });
+        cards.forEach((card) => {
+          const matchesCat =
+            selectedCat === "todos" || card.dataset.cat === selectedCat;
+          const matchesMaterial =
+            selectedMaterials.length === 0 ||
+            selectedMaterials.includes(card.dataset.material);
+          const matchesPrice = parseFloat(card.dataset.price) <= maxPrice;
+          const visible = matchesCat && matchesMaterial && matchesPrice;
+          card.style.display = visible ? "" : "none";
+          if (visible) visibleCount++;
+        });
 
-    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-    resultCount.textContent = visibleCount + ' producto' + (visibleCount === 1 ? '' : 's');
-  }
+        noResults.style.display = visibleCount === 0 ? "block" : "none";
+        resultCount.textContent =
+          visibleCount + " producto" + (visibleCount === 1 ? "" : "s");
+      }
 
-  // Category filter (single-select behaviour)
-  categoryCheckboxes.forEach(cb => {
-    cb.addEventListener('change', () => {
-      selectedCat = cb.dataset.cat;
-      categoryCheckboxes.forEach(other => {
-        const isSelected = other.dataset.cat === selectedCat;
-        other.checked = isSelected;
-        other.closest('.filter-option').classList.toggle('active', isSelected);
+      // Category filter (single-select behaviour)
+      categoryCheckboxes.forEach((cb) => {
+        cb.addEventListener("change", () => {
+          selectedCat = cb.dataset.cat;
+          categoryCheckboxes.forEach((other) => {
+            const isSelected = other.dataset.cat === selectedCat;
+            other.checked = isSelected;
+            other
+              .closest(".filter-option")
+              .classList.toggle("active", isSelected);
+          });
+          applyFilters();
+        });
+      });
+
+      // Material filter (multi-select — check as many as you want)
+      materialCheckboxes.forEach((cb) => {
+        cb.addEventListener("change", () => {
+          cb.closest(".filter-option").classList.toggle("active", cb.checked);
+          applyFilters();
+        });
+      });
+
+      // Price filter (slider)
+      priceSlider.addEventListener("input", () => {
+        const val = parseFloat(priceSlider.value);
+        priceMaxLabel.textContent = val >= 50 ? "50€+" : val + "€";
+        applyFilters();
+      });
+
+      // read ?cat= from URL (set when coming from homepage links)
+      const params = new URLSearchParams(window.location.search);
+      const initialCat = params.get("cat") || "todos";
+      selectedCat = initialCat;
+      categoryCheckboxes.forEach((cb) => {
+        const isSelected = cb.dataset.cat === initialCat;
+        cb.checked = isSelected;
+        cb.closest(".filter-option").classList.toggle("active", isSelected);
       });
       applyFilters();
-    });
-  });
-
-  // Material filter (multi-select — check as many as you want)
-  materialCheckboxes.forEach(cb => {
-    cb.addEventListener('change', () => {
-      cb.closest('.filter-option').classList.toggle('active', cb.checked);
-      applyFilters();
-    });
-  });
-
-  // Price filter (slider)
-  priceSlider.addEventListener('input', () => {
-    const val = parseFloat(priceSlider.value);
-    priceMaxLabel.textContent = val >= 50 ? '50€+' : val + '€';
-    applyFilters();
-  });
-
-  // read ?cat= from URL (set when coming from homepage links)
-  const params = new URLSearchParams(window.location.search);
-  const initialCat = params.get('cat') || 'todos';
-  selectedCat = initialCat;
-  categoryCheckboxes.forEach(cb => {
-    const isSelected = cb.dataset.cat === initialCat;
-    cb.checked = isSelected;
-    cb.closest('.filter-option').classList.toggle('active', isSelected);
-  });
-  applyFilters();
-</script>
-
-</body>
+    </script>
+  </body>
 </html>

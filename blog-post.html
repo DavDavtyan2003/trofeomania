@@ -1,176 +1,427 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | Trofeomanía</title>
-<meta name="description" content="Guías e ideas sobre trofeos, medallas y premios personalizados.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<script src="blog-posts.js"></script>
-<style>
-  :root {
-    --green-deep: #16302A; --green-mid: #234238; --brass: #C9A15C; --brass-bright: #E0BD7D;
-    --cream: #F3EDE1; --warm-white: #FBF9F5; --ink: #211E19; --maroon: #6B222C;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Work Sans', sans-serif; background: var(--warm-white); color: var(--ink); -webkit-font-smoothing: antialiased; }
-  h1, h2 { font-family: 'Fraunces', serif; font-weight: 600; }
-  a { text-decoration: none; color: inherit; }
-  .mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.04em; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Trofeomanía</title>
+    <meta
+      name="description"
+      content="Guías e ideas sobre trofeos, medallas y premios personalizados."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="blog-posts.js"></script>
+    <style>
+      :root {
+        --green-deep: #16302a;
+        --green-mid: #234238;
+        --brass: #c9a15c;
+        --brass-bright: #e0bd7d;
+        --cream: #f3ede1;
+        --warm-white: #fbf9f5;
+        --ink: #211e19;
+        --maroon: #6b222c;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Work Sans", sans-serif;
+        background: var(--warm-white);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .mono {
+        font-family: "IBM Plex Mono", monospace;
+        letter-spacing: 0.04em;
+      }
 
-  .topbar { background: var(--ink); color: var(--cream); text-align: center; font-size: 0.78rem; padding: 8px; letter-spacing: 0.03em; }
-  nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 5%; background: var(--warm-white); position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(0,0,0,0.06); }
-  .logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--green-deep); }
-  .logo span { color: var(--brass); }
-  .nav-links { display: flex; gap: 32px; font-size: 0.92rem; font-weight: 500; }
-  .nav-links a:hover { color: var(--brass); }
-  .cart-btn { background: var(--green-deep); color: var(--cream); padding: 10px 20px; border-radius: 3px; font-size: 0.85rem; font-weight: 500; }
+      .topbar {
+        background: var(--ink);
+        color: var(--cream);
+        text-align: center;
+        font-size: 0.78rem;
+        padding: 8px;
+        letter-spacing: 0.03em;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 5%;
+        background: var(--warm-white);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      .logo {
+        font-family: "Fraunces", serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--green-deep);
+      }
+      .logo span {
+        color: var(--brass);
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        font-size: 0.92rem;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: var(--brass);
+      }
+      .cart-btn {
+        background: var(--green-deep);
+        color: var(--cream);
+        padding: 10px 20px;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
 
-  .breadcrumb { padding: 20px 5% 0; font-size: 0.82rem; color: rgba(33,30,25,0.5); }
-  .breadcrumb a:hover { color: var(--brass); }
+      .breadcrumb {
+        padding: 20px 5% 0;
+        font-size: 0.82rem;
+        color: rgba(33, 30, 25, 0.5);
+      }
+      .breadcrumb a:hover {
+        color: var(--brass);
+      }
 
-  .post-header { max-width: 720px; margin: 0 auto; padding: 30px 5% 0; text-align: center; }
-  .post-tag { display: inline-block; background: var(--brass); color: var(--ink); font-size: 0.7rem; font-weight: 700; padding: 5px 12px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 18px; }
-  .post-header h1 { font-size: 2.1rem; line-height: 1.2; margin-bottom: 16px; }
-  .post-meta { font-size: 0.85rem; color: rgba(33,30,25,0.5); }
+      .post-header {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 30px 5% 0;
+        text-align: center;
+      }
+      .post-tag {
+        display: inline-block;
+        background: var(--brass);
+        color: var(--ink);
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 18px;
+      }
+      .post-header h1 {
+        font-size: 2.1rem;
+        line-height: 1.2;
+        margin-bottom: 16px;
+      }
+      .post-meta {
+        font-size: 0.85rem;
+        color: rgba(33, 30, 25, 0.5);
+      }
 
-  .post-hero { max-width: 900px; margin: 34px auto 0; padding: 0 5%; }
-  .post-hero-img { aspect-ratio: 21/9; background: linear-gradient(135deg, var(--cream), #e7ddc9); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 5rem; color: var(--brass); }
+      .post-hero {
+        max-width: 900px;
+        margin: 34px auto 0;
+        padding: 0 5%;
+      }
+      .post-hero-img {
+        aspect-ratio: 21/9;
+        background: linear-gradient(135deg, var(--cream), #e7ddc9);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        color: var(--brass);
+      }
 
-  .post-body { max-width: 680px; margin: 0 auto; padding: 40px 5% 80px; }
-  .post-body p { font-size: 1.02rem; line-height: 1.75; color: rgba(33,30,25,0.78); margin-bottom: 20px; }
+      .post-body {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 40px 5% 80px;
+      }
+      .post-body p {
+        font-size: 1.02rem;
+        line-height: 1.75;
+        color: rgba(33, 30, 25, 0.78);
+        margin-bottom: 20px;
+      }
 
-  .post-cta { background: var(--green-deep); color: var(--warm-white); border-radius: 14px; padding: 40px 36px; text-align: center; margin-top: 20px; }
-  .post-cta h3 { font-size: 1.3rem; margin-bottom: 10px; }
-  .post-cta p { color: rgba(251,249,245,0.7); margin-bottom: 22px; font-size: 0.95rem; }
-  .btn-primary { background: var(--brass); color: var(--ink); padding: 14px 28px; border-radius: 3px; font-weight: 600; font-size: 0.92rem; display: inline-block; transition: background 0.2s; }
-  .btn-primary:hover { background: var(--brass-bright); }
+      .post-cta {
+        background: var(--green-deep);
+        color: var(--warm-white);
+        border-radius: 14px;
+        padding: 40px 36px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .post-cta h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+      .post-cta p {
+        color: rgba(251, 249, 245, 0.7);
+        margin-bottom: 22px;
+        font-size: 0.95rem;
+      }
+      .btn-primary {
+        background: var(--brass);
+        color: var(--ink);
+        padding: 14px 28px;
+        border-radius: 3px;
+        font-weight: 600;
+        font-size: 0.92rem;
+        display: inline-block;
+        transition: background 0.2s;
+      }
+      .btn-primary:hover {
+        background: var(--brass-bright);
+      }
 
-  section.related { max-width: 1100px; margin: 0 auto; padding: 0 5% 90px; }
-  .related h2 { font-size: 1.4rem; margin-bottom: 26px; }
-  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-  .post-card { border: 1px solid rgba(0,0,0,0.07); border-radius: 10px; overflow: hidden; display: block; }
-  .post-img { aspect-ratio: 16/10; background: linear-gradient(135deg, var(--cream), #e7ddc9); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; color: var(--brass); }
-  .post-info { padding: 18px 20px 22px; }
-  .post-info h4 { font-size: 0.98rem; margin-bottom: 8px; line-height: 1.35; }
-  .post-info span { font-size: 0.8rem; color: rgba(33,30,25,0.5); }
+      section.related {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 5% 90px;
+      }
+      .related h2 {
+        font-size: 1.4rem;
+        margin-bottom: 26px;
+      }
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .post-card {
+        border: 1px solid rgba(0, 0, 0, 0.07);
+        border-radius: 10px;
+        overflow: hidden;
+        display: block;
+      }
+      .post-img {
+        aspect-ratio: 16/10;
+        background: linear-gradient(135deg, var(--cream), #e7ddc9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.2rem;
+        color: var(--brass);
+      }
+      .post-info {
+        padding: 18px 20px 22px;
+      }
+      .post-info h4 {
+        font-size: 0.98rem;
+        margin-bottom: 8px;
+        line-height: 1.35;
+      }
+      .post-info span {
+        font-size: 0.8rem;
+        color: rgba(33, 30, 25, 0.5);
+      }
 
-  footer { background: var(--ink); color: rgba(251,249,245,0.65); padding: 60px 5% 30px; }
-  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-  .footer-grid h4 { color: var(--warm-white); font-size: 0.85rem; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
-  .footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; }
-  .footer-logo { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--warm-white); margin-bottom: 12px; }
-  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 22px; font-size: 0.78rem; display: flex; justify-content: space-between; }
+      footer {
+        background: var(--ink);
+        color: rgba(251, 249, 245, 0.65);
+        padding: 60px 5% 30px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .footer-grid h4 {
+        color: var(--warm-white);
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .footer-grid ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 0.88rem;
+      }
+      .footer-logo {
+        font-family: "Fraunces", serif;
+        font-size: 1.3rem;
+        color: var(--warm-white);
+        margin-bottom: 12px;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 22px;
+        font-size: 0.78rem;
+        display: flex;
+        justify-content: space-between;
+      }
 
-  @media (max-width: 900px) {
-    .nav-links { display: none; }
-    .related-grid { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-  }
-</style>
-</head>
-<body>
-
-  <div class="topbar mono">ENVÍO GRATIS EN PEDIDOS SUPERIORES A 300€ · FABRICADO EN VALENCIA</div>
-
-  <nav>
-    <div class="logo">Trofeo<span>manía</span></div>
-    <div class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="productos.html">Productos</a>
-      <a href="blog.html">Blog</a>
-      <a href="contacto.html">Contacto</a>
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+        }
+        .related-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar mono">
+      ENVÍO GRATIS EN PEDIDOS SUPERIORES A 300€ · FABRICADO EN VALENCIA
     </div>
-    <a href="#" class="cart-btn">Carrito (0)</a>
-  </nav>
 
-  <div class="breadcrumb"><a href="index.html">Inicio</a> / <a href="blog.html">Blog</a> / <span id="breadcrumbTitle">Artículo</span></div>
-
-  <div class="post-header">
-    <span class="post-tag" id="postTag">Guía</span>
-    <h1 id="postTitle">Cargando artículo…</h1>
-    <div class="post-meta"><span id="postDate">—</span> · <span id="postReadTime">—</span> de lectura</div>
-  </div>
-
-  <div class="post-hero">
-    <div class="post-hero-img" id="postIcon">🏆</div>
-  </div>
-
-  <div class="post-body" id="postBody">
-    <!-- paragraphs get inserted here by JS -->
-
-    <div class="post-cta">
-      <h3>¿Listo para encargar el tuyo?</h3>
-      <p>Explora el catálogo y personaliza tu trofeo, medalla o placa con grabado incluido.</p>
-      <a href="productos.html" class="btn-primary">Ver catálogo</a>
-    </div>
-  </div>
-
-  <section class="related">
-    <h2>Más artículos</h2>
-    <div class="related-grid" id="relatedGrid">
-      <!-- filled in by JS with other posts -->
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Trofeomanía</div>
-        <p style="font-size:0.85rem; line-height:1.6;">Tu tienda especializada en trofeos, ajedrez y premios conmemorativos. Fabricación y grabado en Valencia.</p>
+    <nav>
+      <div class="logo">Trofeo<span>manía</span></div>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="blog.html">Blog</a>
+        <a href="contacto.html">Contacto</a>
       </div>
-      <div><h4>Tienda</h4><ul><li><a href="productos.html?cat=trofeos">Trofeos</a></li><li><a href="productos.html?cat=medallas">Medallas</a></li><li><a href="productos.html?cat=placas">Placas</a></li><li><a href="productos.html?cat=ajedrez">Ajedrez</a></li></ul></div>
-      <div><h4>Empresa</h4><ul><li><a href="sobre-nosotros.html">Sobre nosotros</a></li><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="legal.html">Condiciones de venta</a></li></ul></div>
-      <div><h4>Contacto</h4><ul><li>Dr. Zamenhoff, 32 — Valencia</li><li>info@sedesport.es</li><li>962 057 303</li></ul></div>
+      <a href="#" class="cart-btn">Carrito (0)</a>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a> / <a href="blog.html">Blog</a> /
+      <span id="breadcrumbTitle">Artículo</span>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Trofeomanía (Sede Sport)</span>
-      <span>Diseño renovado</span>
+
+    <div class="post-header">
+      <span class="post-tag" id="postTag">Guía</span>
+      <h1 id="postTitle">Cargando artículo…</h1>
+      <div class="post-meta">
+        <span id="postDate">—</span> · <span id="postReadTime">—</span> de
+        lectura
+      </div>
     </div>
-  </footer>
 
-<script>
-  // 1. Read which post to show from the URL, e.g. blog-post.html?id=elegir-trofeo
-  const params = new URLSearchParams(window.location.search);
-  const postId = params.get('id');
-  const post = BLOG_POSTS.find(p => p.id === postId) || BLOG_POSTS[0]; // fallback to first post
+    <div class="post-hero">
+      <div class="post-hero-img" id="postIcon">🏆</div>
+    </div>
 
-  // 2. Fill in the header
-  document.title = post.title + " | Trofeomanía";
-  document.getElementById('postTag').textContent = post.tag;
-  document.getElementById('postTitle').textContent = post.title;
-  document.getElementById('postDate').textContent = post.date;
-  document.getElementById('postReadTime').textContent = post.readTime;
-  document.getElementById('postIcon').textContent = post.icon;
-  document.getElementById('breadcrumbTitle').textContent = post.title;
+    <div class="post-body" id="postBody">
+      <!-- paragraphs get inserted here by JS -->
 
-  // 3. Insert paragraphs before the CTA box
-  const bodyContainer = document.getElementById('postBody');
-  const ctaBox = bodyContainer.querySelector('.post-cta');
-  post.body.forEach(paragraph => {
-    const p = document.createElement('p');
-    p.textContent = paragraph;
-    bodyContainer.insertBefore(p, ctaBox);
-  });
+      <div class="post-cta">
+        <h3>¿Listo para encargar el tuyo?</h3>
+        <p>
+          Explora el catálogo y personaliza tu trofeo, medalla o placa con
+          grabado incluido.
+        </p>
+        <a href="productos.html" class="btn-primary">Ver catálogo</a>
+      </div>
+    </div>
 
-  // 4. Show 3 other posts as "related" (simple: just skip the current one)
-  const relatedGrid = document.getElementById('relatedGrid');
-  const otherPosts = BLOG_POSTS.filter(p => p.id !== post.id).slice(0, 3);
-  otherPosts.forEach(p => {
-    const card = document.createElement('a');
-    card.href = 'blog-post.html?id=' + p.id;
-    card.className = 'post-card';
-    card.innerHTML = `
+    <section class="related">
+      <h2>Más artículos</h2>
+      <div class="related-grid" id="relatedGrid">
+        <!-- filled in by JS with other posts -->
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Trofeomanía</div>
+          <p style="font-size: 0.85rem; line-height: 1.6">
+            Tu tienda especializada en trofeos, ajedrez y premios
+            conmemorativos. Fabricación y grabado en Valencia.
+          </p>
+        </div>
+        <div>
+          <h4>Tienda</h4>
+          <ul>
+            <li><a href="productos.html?cat=trofeos">Trofeos</a></li>
+            <li><a href="productos.html?cat=medallas">Medallas</a></li>
+            <li><a href="productos.html?cat=placas">Placas</a></li>
+            <li><a href="productos.html?cat=ajedrez">Ajedrez</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="legal.html">Condiciones de venta</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li>Dr. Zamenhoff, 32 — Valencia</li>
+            <li>info@sedesport.es</li>
+            <li>962 057 303</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Trofeomanía (Sede Sport)</span>
+        <span>Diseño renovado</span>
+      </div>
+    </footer>
+
+    <script>
+      // 1. Read which post to show from the URL, e.g. blog-post.html?id=elegir-trofeo
+      const params = new URLSearchParams(window.location.search);
+      const postId = params.get("id");
+      const post = BLOG_POSTS.find((p) => p.id === postId) || BLOG_POSTS[0]; // fallback to first post
+
+      // 2. Fill in the header
+      document.title = post.title + " | Trofeomanía";
+      document.getElementById("postTag").textContent = post.tag;
+      document.getElementById("postTitle").textContent = post.title;
+      document.getElementById("postDate").textContent = post.date;
+      document.getElementById("postReadTime").textContent = post.readTime;
+      document.getElementById("postIcon").textContent = post.icon;
+      document.getElementById("breadcrumbTitle").textContent = post.title;
+
+      // 3. Insert paragraphs before the CTA box
+      const bodyContainer = document.getElementById("postBody");
+      const ctaBox = bodyContainer.querySelector(".post-cta");
+      post.body.forEach((paragraph) => {
+        const p = document.createElement("p");
+        p.textContent = paragraph;
+        bodyContainer.insertBefore(p, ctaBox);
+      });
+
+      // 4. Show 3 other posts as "related" (simple: just skip the current one)
+      const relatedGrid = document.getElementById("relatedGrid");
+      const otherPosts = BLOG_POSTS.filter((p) => p.id !== post.id).slice(0, 3);
+      otherPosts.forEach((p) => {
+        const card = document.createElement("a");
+        card.href = "blog-post.html?id=" + p.id;
+        card.className = "post-card";
+        card.innerHTML = `
       <div class="post-img">${p.icon}</div>
       <div class="post-info">
         <h4>${p.title}</h4>
         <span>${p.date} · ${p.readTime}</span>
       </div>
     `;
-    relatedGrid.appendChild(card);
-  });
-</script>
-
-</body>
+        relatedGrid.appendChild(card);
+      });
+    </script>
+  </body>
 </html>
