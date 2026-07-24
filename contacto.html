@@ -1,173 +1,496 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto | Trofeomanía</title>
-<meta name="description" content="Contacta con Trofeomanía en Valencia. Consultas sobre trofeos, medallas, placas grabadas y pedidos personalizados.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --green-deep: #16302A; --green-mid: #234238; --brass: #C9A15C; --brass-bright: #E0BD7D;
-    --cream: #F3EDE1; --warm-white: #FBF9F5; --ink: #211E19; --maroon: #6B222C;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Work Sans', sans-serif; background: var(--warm-white); color: var(--ink); -webkit-font-smoothing: antialiased; }
-  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; }
-  a { text-decoration: none; color: inherit; }
-  .mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.04em; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | Trofeomanía</title>
+    <meta
+      name="description"
+      content="Contacta con Trofeomanía en Valencia. Consultas sobre trofeos, medallas, placas grabadas y pedidos personalizados."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green-deep: #16302a;
+        --green-mid: #234238;
+        --brass: #c9a15c;
+        --brass-bright: #e0bd7d;
+        --cream: #f3ede1;
+        --warm-white: #fbf9f5;
+        --ink: #211e19;
+        --maroon: #6b222c;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Work Sans", sans-serif;
+        background: var(--warm-white);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .mono {
+        font-family: "IBM Plex Mono", monospace;
+        letter-spacing: 0.04em;
+      }
 
-  .topbar { background: var(--ink); color: var(--cream); text-align: center; font-size: 0.78rem; padding: 8px; letter-spacing: 0.03em; }
-  nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 5%; background: var(--warm-white); position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(0,0,0,0.06); }
-  .logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--green-deep); }
-  .logo span { color: var(--brass); }
-  .nav-links { display: flex; gap: 32px; font-size: 0.92rem; font-weight: 500; }
-  .nav-links a:hover { color: var(--brass); }
-  .cart-btn { background: var(--green-deep); color: var(--cream); padding: 10px 20px; border-radius: 3px; font-size: 0.85rem; font-weight: 500; }
+      .topbar {
+        background: var(--ink);
+        color: var(--cream);
+        text-align: center;
+        font-size: 0.78rem;
+        padding: 8px;
+        letter-spacing: 0.03em;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 5%;
+        background: var(--warm-white);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      .logo {
+        font-family: "Fraunces", serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--green-deep);
+      }
+      .logo span {
+        color: var(--brass);
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        font-size: 0.92rem;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: var(--brass);
+      }
+      .cart-btn {
+        background: var(--green-deep);
+        color: var(--cream);
+        padding: 10px 20px;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+      .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.3rem;
+        cursor: pointer;
+        color: var(--ink);
+        padding: 4px 6px;
+      }
 
-  .page-header { background: var(--green-deep); padding: 46px 5% 40px; color: var(--warm-white); }
-  .breadcrumb { font-size: 0.82rem; color: rgba(251,249,245,0.55); margin-bottom: 14px; }
-  .breadcrumb a:hover { color: var(--brass); }
-  .page-header h1 { font-size: 2rem; margin-bottom: 6px; }
-  .page-header p { color: rgba(251,249,245,0.65); font-size: 0.95rem; }
+      .page-header {
+        background: var(--green-deep);
+        padding: 46px 5% 40px;
+        color: var(--warm-white);
+      }
+      .breadcrumb {
+        font-size: 0.82rem;
+        color: rgba(251, 249, 245, 0.55);
+        margin-bottom: 14px;
+      }
+      .breadcrumb a:hover {
+        color: var(--brass);
+      }
+      .page-header h1 {
+        font-size: 2rem;
+        margin-bottom: 6px;
+      }
+      .page-header p {
+        color: rgba(251, 249, 245, 0.65);
+        font-size: 0.95rem;
+      }
 
-  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 60px 5% 90px; }
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        padding: 60px 5% 90px;
+      }
 
-  .info-card { background: var(--cream); border-radius: 10px; padding: 26px 24px; display: flex; gap: 16px; margin-bottom: 16px; }
-  .info-icon { width: 44px; height: 44px; background: var(--warm-white); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
-  .info-card h3 { font-size: 1rem; margin-bottom: 4px; }
-  .info-card p { font-size: 0.9rem; color: rgba(33,30,25,0.65); line-height: 1.5; }
+      .info-card {
+        background: var(--cream);
+        border-radius: 10px;
+        padding: 26px 24px;
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .info-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--warm-white);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        flex-shrink: 0;
+      }
+      .info-card h3 {
+        font-size: 1rem;
+        margin-bottom: 4px;
+      }
+      .info-card p {
+        font-size: 0.9rem;
+        color: rgba(33, 30, 25, 0.65);
+        line-height: 1.5;
+      }
 
-  .map-box { aspect-ratio: 16/9; background: var(--cream); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: rgba(33,30,25,0.4); font-size: 0.9rem; margin-top: 6px; }
+      .map-box {
+        aspect-ratio: 16/9;
+        background: var(--cream);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(33, 30, 25, 0.4);
+        font-size: 0.9rem;
+        margin-top: 6px;
+      }
 
-  .form-box { background: var(--warm-white); }
-  .form-box h2 { font-size: 1.5rem; margin-bottom: 8px; }
-  .form-box > p { color: rgba(33,30,25,0.6); font-size: 0.92rem; margin-bottom: 28px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-  .form-group label { font-size: 0.85rem; font-weight: 500; }
-  .form-group input, .form-group select, .form-group textarea {
-    padding: 13px 15px; border: 1.5px solid rgba(33,30,25,0.15); border-radius: 6px;
-    font-family: 'Work Sans', sans-serif; font-size: 0.95rem; background: var(--warm-white);
-  }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--brass); }
-  .form-group textarea { resize: vertical; min-height: 120px; }
-  .btn-primary { background: var(--brass); color: var(--ink); padding: 15px 32px; border-radius: 3px; font-weight: 600; font-size: 0.95rem; border: none; cursor: pointer; transition: background 0.2s; }
-  .btn-primary:hover { background: var(--brass-bright); }
-  .form-note { font-size: 0.8rem; color: rgba(33,30,25,0.5); margin-top: 14px; }
-  .form-success { display: none; background: #E7F3EA; color: #2A6B3E; padding: 14px 18px; border-radius: 6px; font-size: 0.9rem; margin-top: 16px; }
+      .form-box {
+        background: var(--warm-white);
+      }
+      .form-box h2 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+      }
+      .form-box > p {
+        color: rgba(33, 30, 25, 0.6);
+        font-size: 0.92rem;
+        margin-bottom: 28px;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+      .form-group label {
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        padding: 13px 15px;
+        border: 1.5px solid rgba(33, 30, 25, 0.15);
+        border-radius: 6px;
+        font-family: "Work Sans", sans-serif;
+        font-size: 0.95rem;
+        background: var(--warm-white);
+      }
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--brass);
+      }
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+      .btn-primary {
+        background: var(--brass);
+        color: var(--ink);
+        padding: 15px 32px;
+        border-radius: 3px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .btn-primary:hover {
+        background: var(--brass-bright);
+      }
+      .form-note {
+        font-size: 0.8rem;
+        color: rgba(33, 30, 25, 0.5);
+        margin-top: 14px;
+      }
+      .form-success {
+        display: none;
+        background: #e7f3ea;
+        color: #2a6b3e;
+        padding: 14px 18px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        margin-top: 16px;
+      }
 
-  footer { background: var(--ink); color: rgba(251,249,245,0.65); padding: 60px 5% 30px; }
-  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-  .footer-grid h4 { color: var(--warm-white); font-size: 0.85rem; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
-  .footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; }
-  .footer-logo { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--warm-white); margin-bottom: 12px; }
-  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 22px; font-size: 0.78rem; display: flex; justify-content: space-between; }
+      footer {
+        background: var(--ink);
+        color: rgba(251, 249, 245, 0.65);
+        padding: 60px 5% 30px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .footer-grid h4 {
+        color: var(--warm-white);
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .footer-grid ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 0.88rem;
+      }
+      .footer-logo {
+        font-family: "Fraunces", serif;
+        font-size: 1.3rem;
+        color: var(--warm-white);
+        margin-bottom: 12px;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 22px;
+        font-size: 0.78rem;
+        display: flex;
+        justify-content: space-between;
+      }
 
-  @media (max-width: 900px) {
-    .nav-links { display: none; }
-    .contact-layout { grid-template-columns: 1fr; gap: 40px; }
-    .form-row { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-  }
-</style>
-</head>
-<body>
-
-  <div class="topbar mono">ENVÍO GRATIS EN PEDIDOS SUPERIORES A 300€ · FABRICADO EN VALENCIA</div>
-
-  <nav>
-    <div class="logo">Trofeo<span>manía</span></div>
-    <div class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="productos.html">Productos</a>
-      <a href="blog.html">Blog</a>
-      <a href="contacto.html">Contacto</a>
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--warm-white);
+          flex-direction: column;
+          gap: 4px;
+          padding: 10px 5% 20px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+          box-shadow: 0 12px 20px rgba(0, 0, 0, 0.06);
+        }
+        .nav-links.mobile-open {
+          display: flex;
+        }
+        .nav-links a {
+          padding: 12px 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .hamburger {
+          display: flex;
+        }
+        .contact-layout {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar mono">
+      ENVÍO GRATIS EN PEDIDOS SUPERIORES A 300€ · FABRICADO EN VALENCIA
     </div>
-    <a href="#" class="cart-btn">Carrito (0)</a>
-  </nav>
 
-  <div class="page-header">
-    <div class="breadcrumb"><a href="index.html">Inicio</a> / Contacto</div>
-    <h1>Hablemos de tu pedido</h1>
-    <p>Trofeos, medallas y placas a medida — respuesta en 24h laborables</p>
-  </div>
+    <nav>
+      <a href="index.html" class="logo">Trofeo<span>manía</span></a>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="blog.html">Blog</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <a href="#" class="cart-btn">Carrito (0)</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+        ☰
+      </button>
+    </nav>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var btn = document.getElementById("hamburgerBtn");
+        var links = document.querySelector(".nav-links");
+        if (btn && links) {
+          btn.addEventListener("click", function () {
+            links.classList.toggle("mobile-open");
+          });
+        }
+      });
+    </script>
 
-  <div class="contact-layout">
-    <div>
-      <div class="info-card">
-        <div class="info-icon">📍</div>
-        <div><h3>Visítanos</h3><p>Dr. Zamenhoff, 32<br>46008 Valencia</p></div>
-      </div>
-      <div class="info-card">
-        <div class="info-icon">📞</div>
-        <div><h3>Llámanos</h3><p>962 057 303 / 605 973 663<br>Lunes a viernes, 9:00–15:00</p></div>
-      </div>
-      <div class="info-card">
-        <div class="info-icon">✉️</div>
-        <div><h3>Escríbenos</h3><p>info@sedesport.es<br>Respondemos en menos de 24h</p></div>
-      </div>
-      <div class="map-box">Mapa de ubicación</div>
+    <div class="page-header">
+      <div class="breadcrumb"><a href="index.html">Inicio</a> / Contacto</div>
+      <h1>Hablemos de tu pedido</h1>
+      <p>Trofeos, medallas y placas a medida — respuesta en 24h laborables</p>
     </div>
 
-    <div class="form-box">
-      <h2>Envíanos tu consulta</h2>
-      <p>Cuéntanos qué necesitas grabar y te preparamos un presupuesto sin compromiso.</p>
-      <form id="contactForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Nombre</label>
-            <input type="text" id="name" required placeholder="Tu nombre">
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" required placeholder="tu@email.com">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="subject">Asunto</label>
-          <select id="subject">
-            <option>Consulta general</option>
-            <option>Pedido personalizado</option>
-            <option>Pedido corporativo / gran volumen</option>
-            <option>Estado de un pedido</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Mensaje</label>
-          <textarea id="message" required placeholder="Cuéntanos qué necesitas..."></textarea>
-        </div>
-        <button type="submit" class="btn-primary">Enviar mensaje</button>
-        <div class="form-success" id="formSuccess">✓ Mensaje enviado. Te responderemos en menos de 24h.</div>
-        <p class="form-note">* Este formulario aún no envía datos reales — falta conectar con el backend.</p>
-      </form>
-    </div>
-  </div>
-
-  <footer>
-    <div class="footer-grid">
+    <div class="contact-layout">
       <div>
-        <div class="footer-logo">Trofeomanía</div>
-        <p style="font-size:0.85rem; line-height:1.6;">Tu tienda especializada en trofeos, ajedrez y premios conmemorativos. Fabricación y grabado en Valencia.</p>
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div>
+            <h3>Visítanos</h3>
+            <p>Dr. Zamenhoff, 32<br />46008 Valencia</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div>
+            <h3>Llámanos</h3>
+            <p>962 057 303 / 605 973 663<br />Lunes a viernes, 9:00–15:00</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">✉️</div>
+          <div>
+            <h3>Escríbenos</h3>
+            <p>info@sedesport.es<br />Respondemos en menos de 24h</p>
+          </div>
+        </div>
+        <div class="map-box">Mapa de ubicación</div>
       </div>
-      <div><h4>Tienda</h4><ul><li><a href="productos.html?cat=trofeos">Trofeos</a></li><li><a href="productos.html?cat=medallas">Medallas</a></li><li><a href="productos.html?cat=placas">Placas</a></li><li><a href="productos.html?cat=ajedrez">Ajedrez</a></li></ul></div>
-      <div><h4>Empresa</h4><ul><li><a href="sobre-nosotros.html">Sobre nosotros</a></li><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="legal.html">Condiciones de venta</a></li></ul></div>
-      <div><h4>Contacto</h4><ul><li>Dr. Zamenhoff, 32 — Valencia</li><li>info@sedesport.es</li><li>962 057 303</li></ul></div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Trofeomanía (Sede Sport)</span>
-      <span>Diseño renovado</span>
-    </div>
-  </footer>
 
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    document.getElementById('formSuccess').style.display = 'block';
-    this.reset();
-  });
-</script>
+      <div class="form-box">
+        <h2>Envíanos tu consulta</h2>
+        <p>
+          Cuéntanos qué necesitas grabar y te preparamos un presupuesto sin
+          compromiso.
+        </p>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" required placeholder="Tu nombre" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                required
+                placeholder="tu@email.com"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Asunto</label>
+            <select id="subject">
+              <option>Consulta general</option>
+              <option>Pedido personalizado</option>
+              <option>Pedido corporativo / gran volumen</option>
+              <option>Estado de un pedido</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea
+              id="message"
+              required
+              placeholder="Cuéntanos qué necesitas..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Enviar mensaje</button>
+          <div class="form-success" id="formSuccess">
+            ✓ Mensaje enviado. Te responderemos en menos de 24h.
+          </div>
+          <p class="form-note">
+            * Este formulario aún no envía datos reales — falta conectar con el
+            backend.
+          </p>
+        </form>
+      </div>
+    </div>
 
-</body>
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Trofeomanía</div>
+          <p style="font-size: 0.85rem; line-height: 1.6">
+            Tu tienda especializada en trofeos, ajedrez y premios
+            conmemorativos. Fabricación y grabado en Valencia.
+          </p>
+        </div>
+        <div>
+          <h4>Tienda</h4>
+          <ul>
+            <li><a href="productos.html?cat=trofeos">Trofeos</a></li>
+            <li><a href="productos.html?cat=medallas">Medallas</a></li>
+            <li><a href="productos.html?cat=placas">Placas</a></li>
+            <li><a href="productos.html?cat=ajedrez">Ajedrez</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="legal.html">Condiciones de venta</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li>Dr. Zamenhoff, 32 — Valencia</li>
+            <li>info@sedesport.es</li>
+            <li>962 057 303</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Trofeomanía (Sede Sport)</span>
+        <span>Diseño renovado</span>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("formSuccess").style.display = "block";
+          this.reset();
+        });
+    </script>
+  </body>
 </html>

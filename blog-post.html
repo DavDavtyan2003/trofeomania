@@ -95,6 +95,15 @@
         font-size: 0.85rem;
         font-weight: 500;
       }
+      .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.3rem;
+        cursor: pointer;
+        color: var(--ink);
+        padding: 4px 6px;
+      }
 
       .breadcrumb {
         padding: 20px 5% 0;
@@ -276,12 +285,38 @@
       @media (max-width: 900px) {
         .nav-links {
           display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--warm-white);
+          flex-direction: column;
+          gap: 4px;
+          padding: 10px 5% 20px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+          box-shadow: 0 12px 20px rgba(0, 0, 0, 0.06);
+        }
+        .nav-links.mobile-open {
+          display: flex;
+        }
+        .nav-links a {
+          padding: 12px 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .hamburger {
+          display: flex;
         }
         .related-grid {
           grid-template-columns: 1fr;
         }
         .footer-grid {
           grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .related-grid {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -300,7 +335,21 @@
         <a href="contacto.html">Contacto</a>
       </div>
       <a href="#" class="cart-btn">Carrito (0)</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+        ☰
+      </button>
     </nav>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var btn = document.getElementById("hamburgerBtn");
+        var links = document.querySelector(".nav-links");
+        if (btn && links) {
+          btn.addEventListener("click", function () {
+            links.classList.toggle("mobile-open");
+          });
+        }
+      });
+    </script>
 
     <div class="breadcrumb">
       <a href="index.html">Inicio</a> / <a href="blog.html">Blog</a> /
